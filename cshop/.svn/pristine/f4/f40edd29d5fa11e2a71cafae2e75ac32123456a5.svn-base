@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2011-2012 the original author or authors.
+  ~
+  ~  http://www.jingpaidang.com
+  -->
+
+<!DOCTYPE mapper
+        PUBLIC "-//ibatis.apache.org//DTD Config 3.1//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jingpaidang.cshop.dao.category.CategoryPropertyMapper">
+
+    <!--新增类目属性-->
+    <insert id="insertCategoryProperty" parameterType="CategoryProperty" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO jshop_category_property
+        (
+            property_id,
+            property_name,
+            category_id,
+            platform_flag,
+            is_need_convert,
+            is_required,
+            create_time,
+            operator
+        ) VALUES (
+            #{propertyId},
+            #{propertyName},
+            #{categoryId},
+            #{platformFlag},
+            #{isNeedConvert},
+            #{isRequired},
+            #{createTime},
+            #{operator}
+        )
+    </insert>
+
+    <!--批量新增类目属性-->
+    <insert id="insertCategoryProperties" parameterType="java.util.List">
+        INSERT INTO jshop_category_property
+        (
+        property_id,
+        property_name,
+        category_id,
+        platform_flag,
+        is_need_convert,
+        is_required,
+        create_time,
+        operator
+        ) VALUES
+        <foreach collection="list" item="CategoryProperty" open="(" separator="),(" close=")">
+            #{CategoryProperty.propertyId},
+            #{CategoryProperty.propertyName},
+            #{CategoryProperty.categoryId},
+            #{CategoryProperty.platformFlag},
+            #{CategoryProperty.isNeedConvert},
+            #{CategoryProperty.isRequired},
+            #{CategoryProperty.createTime},
+            #{CategoryProperty.operator}
+        </foreach>
+    </insert>
+
+    <!--新增类目属性值-->
+    <insert id="insertCategoryPropertyValue" parameterType="java.util.List" useGeneratedKeys="true">
+        INSERT INTO jshop_category_property_value
+        (
+        property_id,
+        property_value_id,
+        property_value,
+        create_time,
+        operator
+        ) VALUES
+        <foreach collection="list" item="CategoryPropertyValue" open="(" separator="),(" close=")">
+            #{CategoryPropertyValue.propertyId},
+            #{CategoryPropertyValue.propertyValueId},
+            #{CategoryPropertyValue.propertyValue},
+            #{CategoryPropertyValue.createTime},
+            #{CategoryPropertyValue.operator}
+        </foreach>
+    </insert>
+
+    <!--查询类目属性-->
+    <select id="findCategoryPropertyByCategoryId" parameterType="long" resultType="CategoryProperty">
+        SELECT
+            id AS id,
+            property_id AS propertyId,
+            property_name AS propertyName,
+            category_id AS categoryId,
+            platform_flag AS platformFlag,
+            is_need_convert AS isNeedConvert,
+            is_required AS isRequired,
+            create_time AS createTime,
+            modify_time AS modifyTime,
+            operator AS operator
+        FROM jshop_category_property
+        WHERE category_id = #{categoryId}
+    </select>
+
+    <!--统计类目属性的数量-->
+    <select id="countCategoryProperty" parameterType="CategoryProperty" resultType="int">
+        SELECT count(id)
+        FROM jshop_category_property
+        WHERE property_id = #{propertyId}
+        AND category_id = #{categoryId} AND platform_flag = #{platformFlag}
+    </select>
+
+    <!--根据属性主键ID查询属性值集-->
+    <select id="findCategoryPropertyValueByPropId" parameterType="long" resultType="CategoryPropertyValue">
+        SELECT
+            id AS id,
+            property_id AS propertyId,
+            property_value_id AS propertyValueId,
+            property_value AS propertyValue,
+            create_time AS createTime,
+            operator AS operator
+        FROM jshop_category_property_value
+        WHERE property_id = #{propertyId}
+    </select>
+    <!--根据主键查询类目属性-->
+    <select id="findCategoryPropertyById" parameterType="long" resultType="CategoryProperty">
+        SELECT
+            id AS id,
+            property_id AS propertyId,
+            property_name AS propertyName,
+            category_id AS categoryId,
+            platform_flag AS platformFlag,
+            is_need_convert AS isNeedConvert,
+            is_required AS isRequired,
+            create_time AS createTime,
+            modify_time AS modifyTime,
+            operator AS operator
+        FROM jshop_category_property
+        WHERE id = #{id}
+    </select>
+    <!--根据主键ID查询属性值集-->
+    <select id="findCategoryPropertyValueById" parameterType="long" resultType="CategoryPropertyValue">
+        SELECT
+            id AS id,
+            property_id AS propertyId,
+            property_value_id AS propertyValueId,
+            property_value AS propertyValue,
+            create_time AS createTime,
+            operator AS operator
+        FROM jshop_category_property_value
+        WHERE id = #{id}
+    </select>
+</mapper>

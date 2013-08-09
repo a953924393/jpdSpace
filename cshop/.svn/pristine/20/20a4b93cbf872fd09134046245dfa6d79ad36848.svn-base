@@ -1,0 +1,146 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+
+body {
+margin: 0px;
+padding: 0;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+background-color: #F3F3F3;
+}
+
+li{
+	list-style:none;
+	}
+
+
+#header-wrapper{
+background-color:#323232;
+height:45px;
+}
+#page {
+width: 1000px;
+margin: 0px auto;
+margin: 0 auto;
+margin-top:40px;
+background-color:#FFF;
+
+}
+.logo{
+width: 1000px;
+margin: 0px auto;
+margin: 0 auto;
+}
+.logo1{
+float:left;
+}
+.logo2{
+float:right
+}
+.left_pic{
+float:left;
+}
+.login{
+float:right;
+background-color:#FFF;
+width:505px;
+
+}
+._login{
+margin-left:40px;
+height:208;
+width:400px;
+}
+.button{
+margin-left:40px;
+margin-top:50px;
+padding-left:26px
+}
+.loginButton{
+float:left;
+    width: 160px;
+    height: 34px;
+background-image: url("/img/login.jpg");
+
+}
+.regButton{
+float:left;
+    width: 160px;
+    height: 34px;
+background-image: url("/img/reg.jpg");
+
+}
+.button2{
+	margin-left:26px;
+float:left;
+}
+.button3{
+	border-top-style:solid;
+	border-top-width:1px;
+	border-top-color:#ededed;
+	margin-top:25px;
+	padding-top:15px;
+width:330px;
+height:66px;
+float:left;
+}
+.forget{
+float:left;
+width:70px;
+}
+.login_title{
+margin-top:40px;
+margin-left:40px;
+}
+
+#bottom
+{
+text-align:center;
+color:#666;
+width: 1000px;
+margin: 0px auto;
+margin: 0 auto;
+height:167px;
+	}
+	
+
+	.form_name{
+		width:326px;
+		height:38px;
+		border-color:#CCC;
+		border-style:solid;
+		border-width:1px;
+		font-size:14px;
+		color: #363636;
+		margin-left:26px;
+		margin-top:25px;
+		}
+		.form_s{
+		width:326px;
+		height:38px;
+		border-color:#CCC;
+		border-style:solid;
+		border-width:1px;
+		font-size:14px;
+		color:#CCCCCC;
+		margin:8px 26px 0px 26px;
+		}
+		.bj{
+			float:left;
+			width:326px;
+			height:38px;
+			color:#999;
+			font-size:14px;
+
+			}
+			.box{
+				margin-left:26px;
+				}
+				.ts{
+					border:0px;
+					margin:4px 26px;
+					color:#F00;
+					width:300px;
+					}

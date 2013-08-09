@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2011-2012 the original author or authors.
+  ~
+  ~  http://www.jingpaidang.com
+  -->
+
+<!DOCTYPE mapper
+        PUBLIC "-//ibatis.apache.org//DTD Config 3.1//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jingpaidang.cshop.dao.user.UserMapper">
+    <!-- findById必须和接口中的方法名一样 返回一个User 就是刚才的别名 如果不弄别名要连类路径一起写 麻烦 -->
+    <select id="findById" resultType="User">
+		SELECT
+            id AS id,
+            jshop_user_name AS jshopUserName,
+            jshop_user_password AS jshopUserPassword,
+            user_company_name AS userCompanyName,
+            user_company_address AS userCompanyAddress,
+            user_telephone AS userTelephone,
+            user_email AS userEmail,
+            user_qq AS userQq,
+            create_time AS createTime,
+            modify_time AS modifyTime,
+            operator AS operator
+        FROM jshop_user
+        WHERE id=#{id}
+	</select>
+    <select id="findByUser" resultType="User" parameterType="User">
+		SELECT
+            id AS id,
+            jshop_user_name AS jshopUserName,
+            jshop_user_password AS jshopUserPassword,
+            user_company_name AS userCompanyName,
+            user_company_address AS userCompanyAddress,
+            user_telephone AS userTelephone,
+            user_email AS userEmail,
+            user_qq AS userQq,
+            create_time AS createTime,
+            modify_time AS modifyTime,
+            operator AS operator
+        FROM jshop_user
+        WHERE
+        user_email=#{userEmail} AND jshop_user_password=#{jshopUserPassword}
+	</select>
+    <select id="findByEmail" resultType="User" parameterType="String">
+		SELECT
+            id AS id,
+            jshop_user_name AS jshopUserName,
+            jshop_user_password AS jshopUserPassword,
+            user_company_name AS userCompanyName,
+            user_company_address AS userCompanyAddress,
+            user_telephone AS userTelephone,
+            user_email AS userEmail,
+            user_qq AS userQq,
+            create_time AS createTime,
+            modify_time AS modifyTime,
+            operator AS operator
+        FROM jshop_user
+        WHERE
+        user_email=#{userEmail}
+	</select>
+    <select id="findUserByAid" resultType="User" parameterType="int">
+		select
+		   u.id AS id,
+           u.jshop_user_name AS jshopUserName,
+           u.jshop_user_password AS jshopUserPassword,
+           u.user_company_name AS userCompanyName,
+           u.user_company_address AS userCompanyAddress,
+           u.user_telephone AS userTelephone,
+           u.user_email AS userEmail,
+           u.user_qq AS userQq,
+           u.create_time AS createTime,
+           u.modify_time AS modifyTime,
+           u.operator AS operator
+		from jshop_user u left join jshop_platform_account a
+          on u.id = a.jshop_user_id
+        where a.id = #{aid};
+	</select>
+
+    <select id="findUserByPid" resultType="User" parameterType="String">
+		select
+		   u.id AS id,
+           u.jshop_user_name AS jshopUserName,
+           u.jshop_user_password AS jshopUserPassword,
+           u.user_company_name AS userCompanyName,
+           u.user_company_address AS userCompanyAddress,
+           u.user_telephone AS userTelephone,
+           u.user_email AS userEmail,
+           u.user_qq AS userQq,
+           u.create_time AS createTime,
+           u.modify_time AS modifyTime,
+           u.operator AS operator
+		from jshop_user u left join jshop_platform_account a
+          on u.id = a.jshop_user_id
+        where a.platform_login_id = #{pid};
+	</select>
+
+    <insert id="insert" parameterType="User" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO jshop_user
+            (
+            jshop_user_name ,
+            jshop_user_password ,
+            user_company_name ,
+            user_company_address ,
+            user_telephone ,
+            user_email ,
+            user_qq ,
+            create_time ,
+            modify_time ,
+            operator
+            )
+        VALUES
+            (
+            #{jshopUserName},
+            #{jshopUserPassword},
+            #{userCompanyName},
+            #{userCompanyAddress},
+            #{userTelephone},
+            #{userEmail},
+            #{userQq},
+            #{createTime},
+            #{modifyTime},
+            #{operator}
+            );
+
+    </insert>
+</mapper>

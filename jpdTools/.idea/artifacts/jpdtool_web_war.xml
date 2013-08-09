@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="jpdtool_web:war">
+    <output-path>$PROJECT_DIR$/jpdtool_web/target</output-path>
+    <root id="archive" name="jpdtool_web.war">
+      <element id="artifact" artifact-name="jpdtool_web:war exploded" />
+    </root>
+  </artifact>
+</component>

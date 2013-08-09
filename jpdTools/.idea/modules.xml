@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/jpdtool.iml" filepath="$PROJECT_DIR$/jpdtool.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jpdtool_common/jpdtool_common.iml" filepath="$PROJECT_DIR$/jpdtool_common/jpdtool_common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jpdtool_dao/jpdtool_dao.iml" filepath="$PROJECT_DIR$/jpdtool_dao/jpdtool_dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jpdtool_domain/jpdtool_domain.iml" filepath="$PROJECT_DIR$/jpdtool_domain/jpdtool_domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jpdtool_service/jpdtool_service.iml" filepath="$PROJECT_DIR$/jpdtool_service/jpdtool_service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jpdtool_web/jpdtool_web.iml" filepath="$PROJECT_DIR$/jpdtool_web/jpdtool_web.iml" />
+    </modules>
+  </component>
+</project>
+

@@ -1,0 +1,137 @@
+body{
+		margin:0;
+		padding:0;
+		background-color:#F4F4F4;
+		font: 12px / 1.5 '宋体', tahoma, Srial, helvetica, sans-serif;
+	}
+	div{
+		display:block;
+	}
+	/** 重置超链接元素 **/
+	a {
+		text-decoration: none;
+		color: #0073c6;
+	}
+
+	a:hover {
+		text-decoration: underline;
+		color: #0073c6;
+	}
+	#site-nav{
+		background: none repeat scroll 0 0 #333333;
+    	height: 40px;
+    	min-width: 990px;
+    	width: auto;
+	}
+	#header{
+		background-color:#333333;
+		border-left:1px #eeeeee solid;
+		border-right:1px #eeeeee solid;
+		line-height:40px;
+		margin: 0 auto;
+		width:988px;
+   		position: relative;
+    	z-index: 10000;
+	}
+	#content{
+		margin: 40px auto 0px;
+    	width: 990px;
+	}
+	.nav-title{
+		border: 0 none;
+    	color: #ffffff;
+    	float: left;
+    	font-size: 100%;
+    	margin: 0;
+    	padding: 0;
+    	vertical-align: baseline;
+	}
+	.con-left{
+		float:left;
+		height:522px;
+		width:495px;
+	}
+	.con-right{
+		width:495px;
+		float:left;
+		height:522px;
+		background-color:#FFFFFF;
+	}
+	.reg-title{
+		margin:30px 50px 10px 40px;
+		height:50px;
+	}
+	.reg-t-t{
+		margin: 0;
+    	padding: 0 0 0 10px;
+    	vertical-align: baseline;
+		color:#0073c6;
+		float:left;
+		line-height:45px;
+		font-family:"黑体";
+		font-size:24px;
+		
+	}
+	.reg-t-w{
+		margin: 0;
+    	padding: 0 0 0 10px;
+    	vertical-align: baseline;
+		color:#343434;
+		float:left;
+		line-height:45px;
+		font-family:"黑体";
+		font-size:24px;
+		
+	}
+	.reg-t-p{
+		margin: 0;
+    	padding: 0;
+		float:left;
+	}
+	.reg-form{
+		margin:20px 40px auto 40px;
+	}
+	.reg-form span{
+		color:#FF0000;
+		width:10px;
+		height:30px;
+		line-height:30px;
+	}
+	.reg-form p{
+		color: #666666;
+		font-family: "宋体",Arial;
+		font-size: 14px;
+		font-weight: normal;
+		line-height: 30px;
+		text-decoration: none;
+		vertical-align: middle;
+		margin:0px;
+	}
+	.reg-form tr{
+		height:35px;
+		vertical-align:middle;
+	}
+	.input-text{
+		width:300px;
+		height:30px;
+		padding:0px;
+		line-height:30px;
+	}
+	.msg{
+		font-size: 12px;
+	}
+	#footer{
+		margin: 40px auto 0px;
+		width:990px;
+		height:200px;
+		text-align:center;
+	}
+	#footer p{
+		color: #666666;
+		font-family: "宋体",Arial;
+		font-size: 12px;
+		font-weight: normal;
+		line-height: 150%;
+		text-decoration: none;
+		vertical-align: middle;
+	}

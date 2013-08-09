@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2011-2012 the original author or authors.
+  ~
+  ~  http://www.jingpaidang.com
+  -->
+
+<!DOCTYPE mapper
+        PUBLIC "-//ibatis.apache.org//DTD Config 3.1//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jingpaidang.cshop.dao.convert.ConvertRuleMapper">
+
+    <!--新增平台转换规则-->
+    <insert id="insertPlatformConvertRule" parameterType="PlatformConvertRule" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO jshop_platform_convert_rule
+        (
+            rule_encoding,
+            rule_name,
+            src_account_id,
+            src_category_id,
+            target_account_id,
+            target_category_id,
+            jshop_user_id,
+            create_time,
+            modify_time,
+            operator
+        ) VALUES (
+            #{ruleEncoding},
+            #{ruleName},
+            #{srcAccountId},
+            #{srcCategoryId},
+            #{targetAccountId},
+            #{targetCategoryId},
+            #{jshopUserId},
+            #{createTime},
+            #{modifyTime},
+            #{operator}
+        )
+    </insert>
+    <update id="updatePlatformConvertRule" parameterType="PlatformConvertRule">
+        UPDATE jpd_jshop_db.jshop_platform_convert_rule
+        SET
+        rule_encoding = #{ruleEncoding},
+        rule_name = #{ruleName},
+        src_account_id = #{srcAccountId},
+        src_category_id = #{srcCategoryId},
+        target_account_id = #{targetAccountId},
+        target_category_id = #{targetCategoryId},
+        modify_time = #{modifyTime},
+        operator =  #{operator}
+        WHERE id = #{id}
+    </update>
+    <update id="updateConvertRuleModifyTime" parameterType="PlatformConvertRule">
+        UPDATE jpd_jshop_db.jshop_platform_convert_rule
+        SET
+        modify_time = #{modifyTime},
+        WHERE id = #{id}
+    </update>
+
+    <!--根据主键查询转换规则-->
+    <select id="findPlatformConvertRuleById" parameterType="long" resultType="PlatformConvertRule">
+        SELECT
+            id AS id,
+            rule_encoding AS ruleEncoding,
+            rule_name AS ruleName,
+            src_account_id AS srcAccountId,
+            src_category_id AS srcCategoryId,
+            target_account_id AS targetAccountId,
+            target_category_id AS targetCategoryId,
+            create_time AS createTime,
+            modify_time AS modifyTime,
+            operator AS operator
+        FROM jshop_platform_convert_rule
+        WHERE id = #{id}
+    </select>
+
+    <!--根据账户ID查询转换规则-->
+    <select id="findPlatformConvertRulesByUserId" parameterType="long" resultType="PlatformConvertRule">
+        SELECT
+            id AS id,
+            rule_encoding AS ruleEncoding,
+            rule_name AS ruleName,
+            src_account_id AS srcAccountId,
+            src_category_id AS srcCategoryId,
+            target_account_id AS targetAccountId,
+            target_category_id AS targetCategoryId,
+            jshop_user_id AS jshopUserId,
+            create_time AS createTime,
+            modify_time AS modifyTime,
+            operator AS operator
+        FROM jshop_platform_convert_rule
+        WHERE jshop_user_id = #{jshopUserId}
+    </select>
+
+    <!--查询全部转换规则-->
+    <select id="findPlatformConvertRules" resultType="PlatformConvertRule">
+        SELECT
+            id AS id,
+            rule_encoding AS ruleEncoding,
+            rule_name AS ruleName,
+            src_account_id AS srcAccountId,
+            src_category_id AS srcCategoryId,
+            target_account_id AS targetAccountId,
+            target_category_id AS targetCategoryId,
+            create_time AS createTime,
+            modify_time AS modifyTime,
+            operator AS operator
+        FROM jshop_platform_convert_rule
+    </select>
+
+    <!--新增转换规则详情-->
+    <insert id="insertConvertRuleDetail" parameterType="ConvertRuleDetail" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO jshop_convert_rule_detail
+        (
+            rule_id,
+            target_property_id,
+            src_property_id,
+            target_property_value_id,
+            src_property_value_id,
+            create_time,
+            operator
+        ) VALUES (
+            #{ruleId},
+            #{targetPropertyId},
+            #{srcPropertyId},
+            #{targetPropertyValueId},
+            #{srcPropertyValueId},
+            #{createTime},
+            #{operator}
+        )
+    </insert>
+    <update id="updateConvertRuleDetail" parameterType="ConvertRuleDetail">
+        UPDATE jpd_jshop_db.jshop_convert_rule_detail
+        SET
+        rule_id = #{ruleId},
+        target_property_id = #{targetPropertyId},
+        src_property_id = #{srcPropertyId},
+        target_property_value_id = #{targetPropertyValueId},
+        src_property_value_id = #{srcPropertyValueId},
+        modify_time = #{modifyTime}
+        operator = #{operator}
+        WHERE id = #{id}
+    </update>
+    <!--根据规则ID查询规则详情-->
+    <select id="findConvertRuleDetailByRuleId" parameterType="long" resultType="ConvertRuleDetail">
+        SELECT
+            id AS id,
+            rule_id AS ruleId,
+            target_property_id AS targetPropertyId,
+            src_property_id AS srcPropertyId,
+            target_property_value_id AS targetPropertyValueId,
+            src_property_value_id AS srcPropertyValueId,
+            create_time AS createTime,
+            modify_time AS modifyTime,
+            operator AS operator
+        FROM jshop_convert_rule_detail
+        WHERE rule_id = #{ruleId}
+    </select>
+
+    <select id="findPlatformConvertRule" parameterType="PlatformConvertRule" resultType="PlatformConvertRule">
+        SELECT
+        id AS id,
+        rule_encoding AS ruleEncoding,
+        rule_name AS ruleName,
+        src_account_id AS srcAccountId,
+        src_category_id AS srcCategoryId,
+        target_account_id AS targetAccountId,
+        target_category_id AS targetCategoryId,
+        create_time AS createTime,
+        modify_time AS modifyTime,
+        operator AS operator
+        FROM jshop_platform_convert_rule
+        <where>
+            <if test="srcAccountId != null">
+                AND src_account_id = #{srcAccountId}
+            </if>
+            <if test="srcCategoryId != null">
+                AND src_category_id = #{srcCategoryId}
+            </if>
+            <if test="targetAccountId != null">
+                AND target_account_id = #{targetAccountId}
+            </if>
+            <if test="targetCategoryId != null">
+                AND target_category_id = #{targetCategoryId}
+            </if>
+        </where>
+    </select>
+    <!--根据规则ID删除规则-->
+    <delete id="delConvertRuleByRuleId" parameterType="String" timeout="1000">
+        delete from jshop_platform_convert_rule where id=#{ruleId}
+    </delete>
+    <!--根据规则ID删除规则详情-->
+    <delete id="delConvertRuleDetailByRuleId" parameterType="String" timeout="1000">
+        delete from jshop_convert_rule_detail where rule_id=#{ruleId}
+    </delete>
+</mapper>

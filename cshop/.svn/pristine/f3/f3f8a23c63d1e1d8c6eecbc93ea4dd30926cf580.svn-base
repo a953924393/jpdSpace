@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2011-2012 the original author or authors.
+  ~
+  ~  http://www.jingpaidang.com
+  -->
+
+<!DOCTYPE mapper
+        PUBLIC "-//ibatis.apache.org//DTD Config 3.1//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jingpaidang.cshop.dao.category.ItemCategoryMapper">
+
+    <!--通过主键ID查找商品类目-->
+    <select id="findItemCategoryById" parameterType="int" resultType="ItemCategory">
+        SELECT
+            id AS id,
+            category_id AS categoryId,
+            category_name AS categoryName,
+            parent_id AS parentId,
+            level AS level,
+            is_parent AS isParent,
+            platform_flag AS platformFlag,
+            create_time AS createTime,
+            modify_time AS modifyTime,
+            operator AS operator
+        FROM jshop_item_category
+        WHERE id = #{id}
+    </select>
+    <!--通过类目ID查找类目 -->
+    <select id="findItemCategoryByCidPFlag" parameterType="ItemCategory" resultType="ItemCategory">
+        SELECT
+            id AS id,
+            category_id AS categoryId,
+            category_name AS categoryName,
+            parent_id AS parentId,
+            level AS level,
+            is_parent AS isParent,
+            platform_flag AS platformFlag,
+            create_time AS createTime,
+            modify_time AS modifyTime,
+            operator AS operator
+        FROM jshop_item_category
+        WHERE category_id = #{categoryId} AND platform_flag = #{platformFlag}
+    </select>
+
+    <!--插入商品类目-->
+    <insert id="insertItemCategory" parameterType="ItemCategory" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO jshop_item_category
+        (
+        category_id,
+        category_name,
+        parent_id,
+        level,
+        is_parent,
+        platform_flag,
+        create_time,
+        modify_time,
+        operator
+        )
+        VALUES
+        (
+        #{categoryId},
+        #{categoryName},
+        #{parentId},
+        #{level},
+        #{isParent},
+        #{platformFlag},
+        #{createTime},
+        #{modifyTime},
+        #{operator}
+        )
+    </insert>
+
+    <!--批量插入商品类目-->
+    <insert id="insertItemCategories" parameterType="java.util.List">
+        INSERT INTO jshop_item_category
+        (
+        category_id,
+        category_name,
+        parent_id,
+        level,
+        is_parent,
+        platform_flag,
+        create_time,
+        modify_time,
+        operator
+        ) VALUES
+        <foreach collection="list" item="ItemCategory" open="(" separator="),(" close=")">
+            #{ItemCategory.categoryId},
+            #{ItemCategory.categoryName},
+            #{ItemCategory.parentId},
+            #{ItemCategory.level},
+            #{ItemCategory.isParent},
+            #{ItemCategory.platformFlag},
+            #{ItemCategory.createTime},
+            #{ItemCategory.modifyTime},
+            #{ItemCategory.operator}
+        </foreach>
+    </insert>
+
+    <!--统计指定类目ID的商品类目数量-->
+    <select id="countItemCategoryByCategoryId" parameterType="ItemCategory" resultType="int">
+        SELECT count(id)
+        FROM jshop_item_category
+        WHERE category_id = #{categoryId} AND platform_flag = #{platformFlag}
+    </select>
+
+    <!--新增账户类目对应关系，建立关联关系-->
+    <insert id="insertAccountCategories" parameterType="java.util.List">
+        INSERT INTO jshop_account_category
+        (
+        account_id,
+        category_id
+        ) VALUES
+        <foreach collection="list" item="accountCategory" open="(" separator="),(" close=")">
+            #{accountCategory.accountId},
+            #{accountCategory.categoryId}
+        </foreach>
+    </insert>
+
+    <!-- 查找类目关系是否存在-->
+    <select id="countAccountCategory" parameterType="AccountCategory" resultType="int">
+        SELECT
+          count(ac.id)
+        FROM  jshop_account_category ac
+        LEFT JOIN jshop_item_category cat ON ac.category_id = cat.id
+        WHERE ac.account_id = #{accountId} AND cat.category_id = #{categoryId}
+    </select>
+
+    <!--根据账户ID查询该账户所拥有的商品类目-->
+    <select id="findItemCategoriesByAccountId" parameterType="long" resultType="ItemCategory">
+        SELECT
+            cat.id AS id,
+            cat.category_id AS categoryId,
+            cat.category_name AS categoryName
+        FROM jshop_item_category cat
+        LEFT JOIN jshop_account_category acat ON cat.id = acat.category_id
+        LEFT JOIN jshop_platform_account acc ON acc.id = acat.account_id
+        WHERE acat.account_id = #{accountId}
+    </select>
+
+    <!--根据账户ID查询该账户所拥有的商品类目数量-->
+    <select id="countAccountCategoryByAccountId" parameterType="long" resultType="int">
+        SELECT
+             count(id)
+        FROM jshop_account_category
+        WHERE account_id = #{accountId}
+    </select>
+    <select id="getItemCategoryByAccountIdAndCategoryId" parameterType="java.util.Map" resultType="ItemCategory">
+    	SELECT 
+    		id AS id 
+    		FROM jshop_item_category 
+    		WHERE platform_flag = #{platformFlag} and category_id = #{categoryId};
+    </select>
+</mapper>

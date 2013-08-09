@@ -1,0 +1,77 @@
+package com.jingpaidang.toolSystem.service;
+
+import com.jingpaidang.toolSystem.dao.KeywordDao;
+import com.jingpaidang.toolSystem.dao.SkuDao;
+import com.jingpaidang.toolSystem.domain.Keyword;
+import com.jingpaidang.toolSystem.util.PropUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.TimerTask;
+import java.util.concurrent.CopyOnWriteArrayList;
+
+/**
+ * Created with IntelliJ IDEA.
+ * User: JackChan
+ * Date: 7/17/13
+ * Time: 9:31 AM
+ */
+public class SaveSkuTask extends TimerTask {
+    private static final Logger logger = LoggerFactory.getLogger(SaveSkuTask.class);
+
+    @Override
+    public void run() {
+        try {
+//            SkuDao skuDao = new SkuDao();
+//            skuDao.deleteAllSku();
+//            KeywordDao keywordDao = new KeywordDao();
+//            keywordDao.deleteAllKeyword();
+//
+
+
+            JingdongSku jingdongSku = new JingdongSku();
+
+
+
+            String fileName = "keys";
+
+            List<String> keyFromFile = PropUtil.getKeyFromFile(fileName);
+
+            List<Keyword> keywordList = jingdongSku.saveAndFindKeywords(keyFromFile);
+
+//            List<Keyword> keywordList = keywordDao.saveAndfindKeywords(keyFromFile);
+
+            List<Keyword> strings;
+
+
+
+            int i = 0;
+
+            strings = new CopyOnWriteArrayList<Keyword>();
+
+            for (Keyword s : keywordList) {
+
+                strings.add(s);
+
+                i++;
+
+                if (i % 50 == 0 || i == keyFromFile.size()) {
+
+                    new Thread(new JingdongSkuThread(strings)).start();
+
+                    strings.clear();
+                }
+            }
+
+        } catch (Exception e) {
+            logger.info("添加关键词失败");
+            e.printStackTrace();
+        }
+
+    }
+}
+
+
+

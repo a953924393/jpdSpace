@@ -1,0 +1,14 @@
+package com.jingpaidang.crm.service.task.impl;
+
+import java.util.Date;
+
+import com.jingpaidang.crm.service.task.GetMemberTaskService;
+
+public class GetMemberTaskServiceImpl implements GetMemberTaskService {
+	
+	public void getMember(){
+		System.out.println("================");
+		
+		System.out.println(new Date());
+	}
+}

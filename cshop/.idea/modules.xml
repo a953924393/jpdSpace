@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/cshop.iml" filepath="$PROJECT_DIR$/cshop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cshop-common/cshop-common.iml" filepath="$PROJECT_DIR$/cshop-common/cshop-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cshop-dao/cshop-dao.iml" filepath="$PROJECT_DIR$/cshop-dao/cshop-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cshop-domain/cshop-domain.iml" filepath="$PROJECT_DIR$/cshop-domain/cshop-domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cshop-rpc/cshop-rpc.iml" filepath="$PROJECT_DIR$/cshop-rpc/cshop-rpc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cshop-service/cshop-service.iml" filepath="$PROJECT_DIR$/cshop-service/cshop-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cshop-web/cshop-web.iml" filepath="$PROJECT_DIR$/cshop-web/cshop-web.iml" />
+    </modules>
+  </component>
+</project>
+

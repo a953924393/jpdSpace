@@ -1,0 +1,48 @@
+package com.jingpaidang.crm.dao.merchant;
+
+import java.util.List;
+
+import com.jingpaidang.crm.domain.merchant.Merchant;
+
+/**
+ *  mapper of merchant
+ *  
+ *  @author 
+ *  @time :18:13
+ */
+public interface MerchantMapper {
+
+	/**
+	 * Insert merchant
+	 * @param merchant
+	 */
+	public void insertMerchant(Merchant merchant);
+	/**
+	 * Delete merchant by id
+	 * @param id
+	 */
+	public void deleteMerchantById(long id);
+	/**
+	 * Update Merchant
+	 * @param merchant
+	 */
+	public void updateMerchant(Merchant merchant);
+	/**
+	 * Select merchant by id
+	 * @param id
+	 */
+	public Merchant findMerchantById(long id);
+	/**
+	 * Select all merchant
+	 * @param
+	 */
+	public List<Merchant> findAllMerchant();
+
+    /**
+     * 通过access查询refresh
+     * @param access
+     * @return
+     */
+    public String findRefreshByAccess(String access);
+	
+}

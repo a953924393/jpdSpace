@@ -1,0 +1,236 @@
+package com.jingpaidang.cshop.service.convert;
+
+import com.jd.open.api.sdk.JdException;
+import com.jingpaidang.cshop.common.utils.CommonUtil;
+import com.jingpaidang.cshop.dao.category.CategoryPropertyMapper;
+import com.jingpaidang.cshop.dao.category.ItemCategoryMapper;
+import com.jingpaidang.cshop.dao.convert.ConvertRuleMapper;
+import com.jingpaidang.cshop.dao.user.AccountMapper;
+import com.jingpaidang.cshop.domain.category.CategoryProperty;
+import com.jingpaidang.cshop.domain.category.CategoryPropertyValue;
+import com.jingpaidang.cshop.domain.category.ItemCategory;
+import com.jingpaidang.cshop.domain.convert.ConvertRuleDetail;
+import com.jingpaidang.cshop.domain.convert.PlatformConvertRule;
+import com.jingpaidang.cshop.rpc.base.CategoryBaseService;
+import com.jingpaidang.cshop.service.category.CategoryPropertyService;
+import com.taobao.api.ApiException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import javax.annotation.Resource;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * Created with IntelliJ IDEA.
+ *
+ * @author Thomson Tang
+ * @version 1.0-SNAPSHOT
+ * @date 6/25/13
+ */
+@Service("convertRuleService")
+@Transactional(value = "transactionManager", rollbackFor = {Throwable.class})
+public class ConvertRuleService {
+    private static final Logger logger = LoggerFactory.getLogger(ConvertRuleService.class);
+
+    private static final String ENCODING_CONNECT_LITERAL = "-";
+
+    @Resource
+    private ItemCategoryMapper itemCategoryMapper;
+    @Resource
+    private ConvertRuleMapper convertRuleMapper;
+    @Resource
+    private AccountMapper accountMapper;
+    @Resource
+    private CategoryPropertyMapper categoryPropertyMapper;
+    @Resource
+    private CategoryPropertyService propertyService;
+
+    /**
+     * delete convertRule and convertRuledetail,fail
+     * If the processing job fails, the transaction is rolled back.
+     */
+    public Map deleteConvertRule(String ruleId) throws Exception{
+         Map result=new HashMap();
+         String str="删除规则失败";
+         boolean rst=false;
+        try{
+            convertRuleMapper.delConvertRuleDetailByRuleId(ruleId);
+            convertRuleMapper.delConvertRuleByRuleId(ruleId);
+            str ="删除规则成功" ;
+        } catch (Exception e) {
+            logger.error("******* 删除平台转换规则失败！******", e);
+            throw new Exception("删除转换规则失败！");
+        }finally {
+            result.put("msg",str);
+        }
+        return result;
+    }
+    /**
+     * 新建平台转换规则
+     *
+     * @param convertRule
+     */
+    public void downloadPropsAndVals4ConvertRule(PlatformConvertRule convertRule) throws JdException, ApiException {
+            //下载源网店相关类目属性
+            propertyService.downloadCategoryPropertiesAndValues(convertRule.getSrcAccountId(), convertRule.getSrcCategoryId());
+            //下载目标网店相关类目属性
+            propertyService.downloadCategoryPropertiesAndValues(convertRule.getTargetAccountId(), convertRule.getTargetCategoryId());
+    }
+
+
+    /**
+     * 查询所有的平台转换规则
+     * @param userId (jshop user id)
+     * @return
+     */
+    public List<PlatformConvertRule> findAllPlatformConvertRulesByUserId(long userId) {
+        List<PlatformConvertRule> convertRules = convertRuleMapper.findPlatformConvertRulesByUserId(userId);
+        for (PlatformConvertRule convertRule : convertRules) {
+            addPropertiesDescription(convertRule);
+        }
+        return convertRules;
+    }
+
+    /**
+     * 多条件查询平台转换规则集
+     *
+     * @param platformConvertRule
+     * @return
+     */
+    public List<PlatformConvertRule> findPlatformConvertRules(PlatformConvertRule platformConvertRule) {
+        return convertRuleMapper.findPlatformConvertRules(platformConvertRule);
+    }
+
+    /**
+     * 查询转换规则详情信息
+     *
+     * @param convertRule
+     */
+    public List<CategoryProperty> findTargetPropsAndVals4ConvertRule(PlatformConvertRule convertRule) {
+        //增加转换规则基本信息
+        addPropertiesDescription(convertRule);
+        return propertyService.findCategoryPropertyListByCategoryId(convertRule.getTargetCategoryId());
+    }
+
+    /**
+     * 规则编码生成方式
+     *
+     * @param convertRule
+     * @return
+     */
+    private void generateRuleEncoding(PlatformConvertRule convertRule) {
+        StringBuffer ruleEncoding = new StringBuffer();
+        ItemCategory srcCategory = itemCategoryMapper.findItemCategoryById(CommonUtil.fromLong2Int(convertRule.getSrcCategoryId()));
+        ItemCategory targetCategory = itemCategoryMapper.findItemCategoryById(CommonUtil.fromLong2Int(convertRule.getTargetCategoryId()));
+        ruleEncoding.append(srcCategory.getPlatformFlag()).append(ENCODING_CONNECT_LITERAL)
+                .append(srcCategory.getCategoryId()).append(ENCODING_CONNECT_LITERAL)
+                .append(targetCategory.getPlatformFlag()).append(ENCODING_CONNECT_LITERAL)
+                .append(targetCategory.getCategoryId());
+        convertRule.setRuleEncoding(ruleEncoding.toString());
+    }
+
+    /**
+     * 为每个转换规则添加对应属性的描述名称，主要用于在页面中展示信息
+     *
+     * @param convertRule
+     */
+    private void addPropertiesDescription(PlatformConvertRule convertRule) {
+        convertRule.setSrcShopName(getAccountNickById(convertRule.getSrcAccountId()));
+        convertRule.setSrcCategoryName(getCategoryNameById(convertRule.getSrcCategoryId()));
+        convertRule.setTargetShopName(getAccountNickById(convertRule.getTargetAccountId()));
+        convertRule.setTargetCategoryName(getCategoryNameById(convertRule.getTargetCategoryId()));
+    }
+    public void updateConvertRuleAndDetail(PlatformConvertRule convertRule, List<ConvertRuleDetail> convertRuleDetails) throws  Exception {
+
+        try {
+            convertRule = convertRuleMapper.findPlatformConvertRuleById(convertRule.getId());
+
+            convertRule.setModifyTime(new Date());
+
+            convertRuleMapper.updatePlatformConvertRule(convertRule);
+
+            for(ConvertRuleDetail ruleDetail : convertRuleDetails) {
+
+                if(ruleDetail.getId() != 0) {
+                    createConvertRuleDetails(convertRule.getId(), convertRuleDetails);
+                } else {
+                    updateConvertRuleDetails(convertRule.getId(), convertRuleDetails);
+                }
+            }
+
+        }   catch (Exception e) {
+
+            throw new Exception("更新转换规则及详情失败！");
+        }
+    }
+
+
+    /**
+     * 创建转换规则及其详情信息
+     *
+     * @param convertRule
+     * @param convertRuleDetails
+     * @throws Exception
+     */
+    public void createConvertRuleAndDetail(PlatformConvertRule convertRule, List<ConvertRuleDetail> convertRuleDetails) {
+            createConvertRule(convertRule);
+            createConvertRuleDetails(convertRule.getId(), convertRuleDetails);
+    }
+
+    /**
+     * 创建转换规则基本信息
+     *
+     * @param convertRule
+     */
+    private void createConvertRule(PlatformConvertRule convertRule) {
+        convertRule.setCreateTime(new Date());
+        generateRuleEncoding(convertRule);
+        convertRuleMapper.insertPlatformConvertRule(convertRule);
+        logger.info("============ 生成ID： " + convertRule.getId());
+    }
+
+    /**
+     * 创建转换规则详情
+     *
+     * @param convertRuleDetails
+     */
+    private void createConvertRuleDetails(long ruleId, List<ConvertRuleDetail> convertRuleDetails) {
+        for (ConvertRuleDetail convertRuleDetail : convertRuleDetails) {
+            convertRuleDetail.setRuleId(ruleId);
+            convertRuleDetail.setCreateTime(new Date());
+            convertRuleDetail.setOperator("");
+            convertRuleMapper.insertConvertRuleDetail(convertRuleDetail);
+        }
+    }
+    /**
+     * 更新转换规则详情
+     *
+     * @param convertRuleDetails
+     */
+    private void updateConvertRuleDetails(long ruleId, List<ConvertRuleDetail> convertRuleDetails) {
+        for (ConvertRuleDetail convertRuleDetail : convertRuleDetails) {
+            convertRuleDetail.setRuleId(ruleId);
+            convertRuleDetail.setModifyTime(new Date());
+            convertRuleDetail.setOperator("");
+            convertRuleMapper.updateConvertRuleDetail(convertRuleDetail);
+        }
+    }
+
+    private String getAccountNickById(long id) {
+        return accountMapper.findAccountById(CommonUtil.fromLong2Int(id)).getPlatformLoginName();
+
+    }
+
+    private String getShopNameById(long id) {
+        return accountMapper.findAccountById(CommonUtil.fromLong2Int(id)).getPlatformShopName();
+    }
+
+    private String getCategoryNameById(long id) {
+        return itemCategoryMapper.findItemCategoryById(CommonUtil.fromLong2Int(id)).getCategoryName();
+    }
+}

@@ -1,0 +1,69 @@
+package com.jingpaidang.crm.service.merchant;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.stereotype.Service;
+
+import com.jingpaidang.crm.common.constant.BasicConstant;
+import com.jingpaidang.crm.dao.merchant.MerchantMapper;
+import com.jingpaidang.crm.domain.merchant.Merchant;
+import com.jingpaidang.crm.rpc.jos.JdService;
+
+@Service
+public class MerchantService {
+		
+		private MerchantMapper merchantMapper;
+		
+    /**
+     * 通过accessToken查找到refreshToken
+     * @param access
+     * @return
+     */
+        public String findRefreshByAccess(String access) {
+            //TODO
+
+            new JdService();
+            return null;
+        }
+        
+        public void insertMerchant(Merchant merchant)
+		{
+			// 判断是否已经存在
+			if(merchantMapper.findMerchantByMerchantNum(merchant.getMerchantNum()) == null )
+			     merchantMapper.insertMerchant(merchant);
+			
+				
+		}
+		/*
+		 * Date : 8/7/2013
+		 * param : id  //要删除的id
+		 */
+		public void deleteMerchantById(long id)
+		{
+			Map<String,Object> map = new HashMap<String, Object>();
+			map.put("status",BasicConstant.MERCHANT_STATUS_REMOVE);
+			map.put("id", id);
+			merchantMapper.deleteMerchantById(map);
+		}
+		/*
+		 * Date : 8/7/2013
+		 * Param :merchant  要更新的对象
+		 */
+		public void updateMerchant(Merchant merchant)
+		{
+			merchantMapper.updateMerchant(merchant);
+		}
+		/*
+		 * Date ：8/7/2013
+		 * Param :status merchant状态的标志
+		 */
+		public List<Merchant> findAllMerchant(String status)
+		{
+			List<Merchant> merchants = merchantMapper.findAllMerchant(status);
+			
+			return merchants;
+		}
+		
+}

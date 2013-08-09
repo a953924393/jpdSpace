@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/jpd-crm.iml" filepath="$PROJECT_DIR$/jpd-crm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jpd-crm-common/jpd-crm-common.iml" filepath="$PROJECT_DIR$/jpd-crm-common/jpd-crm-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jpd-crm-dao/jpd-crm-dao.iml" filepath="$PROJECT_DIR$/jpd-crm-dao/jpd-crm-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jpd-crm-domain/jpd-crm-domain.iml" filepath="$PROJECT_DIR$/jpd-crm-domain/jpd-crm-domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jpd-crm-rpc/jpd-crm-rpc.iml" filepath="$PROJECT_DIR$/jpd-crm-rpc/jpd-crm-rpc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jpd-crm-service/jpd-crm-service.iml" filepath="$PROJECT_DIR$/jpd-crm-service/jpd-crm-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jpd-crm-web/jpd-crm-web.iml" filepath="$PROJECT_DIR$/jpd-crm-web/jpd-crm-web.iml" />
+    </modules>
+  </component>
+</project>
+

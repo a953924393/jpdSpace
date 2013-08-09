@@ -1,0 +1,238 @@
+package com.jingpaidang.cshop.service;
+
+import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.Resource;
+
+import com.jingpaidang.cshop.common.utils.CommonUtil;
+import com.jingpaidang.cshop.common.utils.ValidateUtil;
+import com.jingpaidang.cshop.rpc.tb.TbService;
+import com.taobao.api.ApiException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
+
+import com.jingpaidang.cshop.dao.user.AccountMapper;
+import com.jingpaidang.cshop.dao.user.UserMapper;
+import com.jingpaidang.cshop.domain.user.Account;
+import com.jingpaidang.cshop.domain.user.User;
+
+/**
+ * @author jackchen
+ */
+@Service("userServcie")
+public class UserService {
+    private static final Logger logger = LoggerFactory.getLogger(UserService.class);
+
+    @Resource
+    private UserMapper userMapper;
+
+    @Resource
+    private AccountMapper accountMapper;
+
+    @Resource
+    private TbService tbService;
+
+    /**
+     * 通过平台id查找user
+     * @param pid
+     * @return
+     */
+    public User findUserByPid(String pid) {
+        User userByPid = userMapper.findUserByPid(pid);
+        return userByPid;
+    }
+
+    /**
+     * 用户平台授权跳转后进行关联user操作
+     *
+     * @param model
+     * @param accountId
+     * @param shopName
+     * @return
+     */
+    public void relateAccount2User(User model, Integer accountId, String shopName) {
+        Account account = findAccountByAid(accountId);
+
+        if (ValidateUtil.isValidated(shopName)) {
+
+            account.setPlatformShopName(shopName);
+        }
+
+        account.setJshopUserId(model.getId());
+
+        updateAccount(account);
+
+    }
+
+    /**
+     * 验证邮箱是否被注册
+     *
+     * @param userEmail
+     * @return
+     */
+
+    public boolean validateEmail(String userEmail) {
+        User user = userMapper.findByEmail(userEmail);
+
+        if (user != null) {
+            return false;
+        }
+        return true;
+    }
+
+    public void updateAccount(Account account) {
+        accountMapper.update(account);
+    }
+
+
+    /**
+     * 新增或更新
+     *
+     * 如果是更新，将不返回accountId，如果有则返回accountId
+     * "access_token": "2b345775-441b-402d-9554-b7f732493328",
+     * "code": 0,  "expires_in": 31103999,
+     * "refresh_token": "51286759-2489-4060-95da-1f6588c40627",
+     * "scope": "null",
+     * "time": "1371537021056",
+     * "token_type": "bearer",
+     * "uid": "4511579741"}
+     *
+     * @param map
+     */
+    public Account newOrUpdateAccount(Map<String, Object> map) throws ApiException {
+        Account account = new Account();
+        if ("1".equals(map.get("flag"))) {
+            account.setPlatformLoginId(map.get("taobao_user_id").toString());
+            account.setPlatformLoginName(map.get("taobao_user_nick").toString());
+            account.setPlatformAccessToken(map.get("access_token").toString());
+            account.setPlatformRefreshToken(map.get("refresh_token").toString());
+
+            Integer type = this.judgeTmOrTb(map.get("access_token").toString());
+
+            account.setPlatformFlag(type);
+            account.setAccessTokenExpireTime(map.get("expires_in").toString());
+            account.setRefreshTokenExpireTime(map.get("re_expires_in").toString());
+        } else if ("3".equals(map.get("flag"))) {
+            System.err.println(map.toString());
+
+            logger.info(map.toString());
+
+            account.setPlatformLoginName(map.get("user_nick").toString());
+            account.setPlatformLoginId(map.get("uid").toString());
+            account.setPlatformAccessToken(map.get("access_token").toString());
+            account.setPlatformRefreshToken(map.get("refresh_token").toString());
+            account.setPlatformFlag(Integer.parseInt(map.get("flag").toString()));
+            account.setAccessTokenExpireTime(map.get("expires_in").toString());
+            account.setRefreshTokenExpireTime(map.get("time").toString());
+        }
+        Account byPlatformLoginId = accountMapper.findByPlatformLoginId(account.getPlatformLoginId());
+        if (byPlatformLoginId != null) {
+
+            byPlatformLoginId.setModifyTime(new Date());
+            byPlatformLoginId.setPlatformAccessToken(account.getPlatformAccessToken());
+            byPlatformLoginId.setPlatformRefreshToken(account.getPlatformRefreshToken());
+
+            accountMapper.update(byPlatformLoginId);
+            byPlatformLoginId.setId(0);
+            return byPlatformLoginId;
+        } else {
+            account.setCreateTime(new Date());
+            accountMapper.insert(account);
+            account = accountMapper.findByPlatformLoginId(account.getPlatformLoginId());
+            return account;
+        }
+    }
+
+
+
+    private Integer judgeTmOrTb(String accessToken) throws ApiException {
+        com.taobao.api.domain.User user = tbService.getUser(accessToken);
+
+        String type = user.getType();
+
+        String t = type.toUpperCase();
+
+        if (t.equals("B")) {
+            return 2;
+        } else {
+            return 1;
+        }
+    }
+
+    /**
+     * 保存用户
+     *
+     * @param user
+     */
+    public void saveUser(User user) {
+        logger.info("=================");
+        logger.info("开始插入");
+        user.setJshopUserPassword(CommonUtil.md5(user.getJshopUserPassword()));
+        userMapper.insert(user);
+        logger.info("插入完成");
+    }
+
+
+    public void saveAccount(Account account) {
+
+        accountMapper.insert(account);
+    }
+
+    /**
+     * 查找所有的平台用户
+     *
+     * @return
+     */
+    public List<Account> findAllAccounts(Integer uid, Integer src) {
+        List<Account> findAll = accountMapper.findByUserId(uid);
+
+        Iterator<Account> iterator = findAll.iterator();
+
+        //如果 是源网店，赛选出淘宝和天猫
+        if (src != null) {
+            if (src == 1) {
+                while (iterator.hasNext()) {
+                    Account account = iterator.next();
+                    if (account.getPlatformFlag() != 1 && account.getPlatformFlag() != 2) {
+                        iterator.remove();
+                    }
+                }
+                //如果是目标网店，筛选出京东和其他
+            } else if (src == 0) {
+                while (iterator.hasNext()) {
+                    Account account = iterator.next();
+                    if (account.getPlatformFlag() == 2 || account.getPlatformFlag() == 1) {
+                        iterator.remove();
+                    }
+                }
+            }
+        }
+
+        return findAll;
+    }
+
+    public User login(User model) {
+        model.setJshopUserPassword(CommonUtil.md5(model.getJshopUserPassword()));
+
+        User findByUser = userMapper.findByUser(model);
+
+        return findByUser;
+    }
+
+
+    /**
+     * 根据主键查询account
+     *
+     * @param aid
+     * @return
+     */
+    public Account findAccountByAid(Integer aid) {
+        Account account = accountMapper.findAccountById(aid);
+        return account;
+    }
+
+}

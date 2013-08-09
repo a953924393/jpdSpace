@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/jpd-sku.iml" filepath="$PROJECT_DIR$/jpd-sku.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jpd-sku-common/jpd-sku-common.iml" filepath="$PROJECT_DIR$/jpd-sku-common/jpd-sku-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jpd-sku-dao/jpd-sku-dao.iml" filepath="$PROJECT_DIR$/jpd-sku-dao/jpd-sku-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jpd-sku-domain/jpd-sku-domain.iml" filepath="$PROJECT_DIR$/jpd-sku-domain/jpd-sku-domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jpd-sku-rpc/jpd-sku-rpc.iml" filepath="$PROJECT_DIR$/jpd-sku-rpc/jpd-sku-rpc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jpd-sku-service/jpd-sku-service.iml" filepath="$PROJECT_DIR$/jpd-sku-service/jpd-sku-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jpd-sku-web/jpd-sku-web.iml" filepath="$PROJECT_DIR$/jpd-sku-web/jpd-sku-web.iml" />
+    </modules>
+  </component>
+</project>
+

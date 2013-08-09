@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://www.springframework.org/schema/beans
+                                   http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+            <bean id="getMemerService" class="com.jingpaidang.crm.service.task.impl.GetMemberTaskServiceImpl"></bean>
+			<!-- 1创建执行任务的类的实例 -->
+			<bean id="getMemberTask" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+				<property name="targetObject">
+					<ref bean="getMemerService"/>
+				</property>
+				<property name="targetMethod">
+				<value>getMember</value>
+				</property>
+			</bean>
+			<!-- 2创建一个触发器,整合执行任务的类的实例和时间关联 -->
+			<bean id="getMemberTaskTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+				<!-- 注入要执行任务的类的实例 -->
+				<property name="jobDetail" ref="getMemberTask"></property>
+				<!-- 配置定时执行任务,调用该触发器的执行 -->
+				<property name="cronExpression" value="0 0/5 * * * ?" />
+			</bean>
+			<!-- 3注册触发器,启动调度任务 -->
+			<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+				<property name="triggers">
+					<list>
+						<ref bean="getMemberTaskTrigger" />
+					</list>
+				</property>
+			</bean>
+</beans>                                

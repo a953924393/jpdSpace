@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//ibatis.apache.org//DTD Config 3.1//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jingpaidang.crm.dao.merchant.MerchantMapper">
+	<select id="findMerchantById" parameterType="long" resultType="Merchant">
+			SELECT
+				merchant_num AS merchantNum,
+				login_name AS loginName,
+				shop_name AS shopName,
+				contact AS contact,
+				telephone AS telephone,
+				email AS email,
+				company_name AS companyName,
+				business_license AS businessLicense,
+				business_license_address AS businessLicenseAddress,
+				company_address AS companyAddress,
+				phone_district_number AS phoneDistrictNumber,
+				phone_number AS phoneNumber,
+				legal_person AS legalPerson,
+				business_type AS businessType,
+				business_scope AS businessScope,
+				created AS created,
+				modified AS modified,
+				operator AS operator,
+				remark AS remark,
+				status AS status
+			FROM
+					crm_merchant
+			WHERE
+					id=#{id}
+				
+					<!-- undo 判断条件 -->
+	</select>
+	
+	<select id="findAllMerchant" resultType="Merchant" parameterType="String">
+			SELECT
+				merchant_num AS merchantNum,
+				login_name AS loginName,
+				shop_name AS shopName,
+				contact AS contact,
+				telephone AS telephone,
+				email AS email,
+				company_name AS companyName,
+				business_license AS businessLicense,
+				business_license_address AS businessLicenseAddress,
+				company_address AS companyAddress,
+				phone_district_number AS phoneDistrictNumber,
+				phone_number AS phoneNumber,
+				legal_person AS legalPerson,
+				business_type AS businessType,
+				business_scope AS businessScope,
+				created AS created,
+				modified AS modified,
+				operator AS operator,
+				remark AS remark,
+				status AS status
+			FROM
+				crm_merchant
+			WHERE
+				status = #{status}
+	</select>
+	<insert id="insertMerchant" parameterType="Merchant" useGeneratedKeys="true" keyProperty="id">
+			INSERT into crm_merchant
+			(
+				merchant_num,
+				login_name,
+				shop_name,
+				contact,
+				telephone,
+				email,
+				company_name,
+				business_license,
+				business_license_address,
+				company_address,
+				phone_district_number,
+				phone_number,
+				legal_person,
+				business_type,
+				business_scope,
+				created,
+				modified,
+				operator,
+				remark,
+				status
+			)
+			VALUES
+			(
+				#{merchant},
+				#{loginName},
+				#{shopName},
+				#{contact},
+				#{telephone},
+				#{email},
+				#{companyName},
+				#{businessName},
+				#{businessLicense},
+				#{businessLicenseAddress},
+				#{companyAddress},
+				#{phoneDistrictNumber},
+				#{phoneNumber},
+				#{legalPerson},
+				#{businessType},
+				#{businessScope},
+				#{created},
+				#{modified},
+				#{operator},
+				#{remark},
+				#{status}
+			)
+	</insert>
+	<update id="updateMerchant" parameterType="Merchant">
+		UPDATE crm_merchant  SET
+				merchant_num = #{merchantName},
+				login_name = #{loginName},
+				shop_name = #{shopName},
+				contact = #{contact},
+				telephone = #{telephone},
+				email = #{email},
+				company_name = #{companyName},
+				business_license = #{businessLicense},
+				business_license_address = #{businessLicenseAddress},
+				company_address = #{companyAddress},
+				phone_district_number = #{phoneDistrictNumber},
+				phone_number = #{phoneNumber},
+				legal_person = #{legalPerson},
+				business_type = #{businessType},
+				business_scope = #{businessScope},
+				created = #{created},
+				modified = #{modified},
+				operator = #{operator},
+				remark = #{remark},
+				status = #{status}
+		WHERE
+				id = #{id}
+	</update>
+	<update id="deleteMerchantById" parameterType="Map">
+		<!-- undo any operate -->
+		UPDATE crm_merchant SET
+				status = #{status}
+		WHERE
+				id = #{id}
+		
+	</update>
+	
+		<select id="findMerchantByMerchantNum" parameterType="long" resultType="Merchant">
+			SELECT
+				merchant_num AS merchantNum,
+				
+			FROM
+					crm_merchant
+			WHERE
+					merchant_num = #{merchantNum}
+				
+					<!-- undo 判断条件 -->
+	</select>
+
+    <select id="findByAccess" resultType="Merchant" parameterType="String">
+			SELECT
+				merchant_num AS merchantNum,
+				login_name AS loginName,
+				shop_name AS shopName,
+				contact AS contact,
+				telephone AS telephone,
+				email AS email,
+				company_name AS companyName,
+				business_license AS businessLicense,
+				business_license_address AS businessLicenseAddress,
+				company_address AS companyAddress,
+				phone_district_number AS phoneDistrictNumber,
+				phone_number AS phoneNumber,
+				legal_person AS legalPerson,
+				business_type AS businessType,
+				business_scope AS businessScope,
+				created AS created,
+				modified AS modified,
+				operator AS operator,
+				remark AS remark,
+				status AS status
+			FROM
+				crm_merchant
+			WHERE
+				 merchant_access_token=#{access}
+	</select>
+			
+	<update id="updateAccessToken" parameterType="Merchant">
+             UPDATE
+                  crm_merchant
+              SET
+                 merchant_access_token=#{access}
+              WHERE
+                 id=#{id}
+	</update>
+	
+</mapper>

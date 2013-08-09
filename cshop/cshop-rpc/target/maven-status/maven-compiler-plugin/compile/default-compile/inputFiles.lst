@@ -1,0 +1,6 @@
+/home/jackchen/newSpace/cshop-rpc/src/main/java/com/jingpaidang/cshop/rpc/base/CategoryBaseService.java
+/home/jackchen/newSpace/cshop-rpc/src/main/java/com/jingpaidang/cshop/rpc/tb/TbService.java
+/home/jackchen/newSpace/cshop-rpc/src/main/java/com/jingpaidang/cshop/rpc/jd/JdServiceAspect.java
+/home/jackchen/newSpace/cshop-rpc/src/main/java/com/jingpaidang/cshop/rpc/jd/proxy/JdServiceProxy.java
+/home/jackchen/newSpace/cshop-rpc/src/main/java/com/jingpaidang/cshop/rpc/jd/JdService.java
+/home/jackchen/newSpace/cshop-rpc/src/main/java/com/jingpaidang/cshop/rpc/tb/proxy/TbService.java

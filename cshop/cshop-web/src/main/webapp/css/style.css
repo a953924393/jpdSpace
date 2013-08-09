@@ -1,0 +1,446 @@
+@charset "utf-8";
+/* CSS Document */
+blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
+th, td, /* table elements 表格元素 */
+
+img/* img elements 图片元素 */ {
+    border: medium none;
+    margin: 0;
+    padding: 0;
+}
+
+/** 设置默认字体 **/
+body, button, input, select, textarea {
+    font: 12px / 1.5 '宋体', tahoma, Srial, helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+}
+
+em {
+    font-style: normal;
+}
+
+/** 重置列表元素 **/
+ul, ol {
+    list-style: none;
+}
+
+/** 重置超链接元素 **/
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #F40;
+}
+
+/** 重置图片元素 **/
+img {
+    border: 0px;
+}
+
+/** 重置表格元素 **/
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*清除浮动*/
+.fixed:after {
+    content: ".";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
+.fixed {
+    display: block;
+    min-height: 1%;
+}
+
+*html .fixed {
+    height: 1%;
+}
+
+.clear {
+    diplay: block !important;
+    float: none !important;
+    clear: both;
+    overflow: hidden;
+    width: auto !important;
+    height: 0 !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    font-size: 0;
+    line-height: 0;
+}
+
+img {
+    vertical-align: middle;
+}
+
+/*公共样式*/
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.ma {
+    margin: 0 auto;
+}
+
+.ovf {
+    overflow: hidden;
+}
+
+#header, .guild, .center, .main, .fromBox, .shop, .listBox {
+    width: 100%;
+}
+
+#header {
+    height: 110px;
+}
+
+#header h1 {
+    height: 75px;
+    line-height: 75px;
+    font-size: 24px;
+    color: #656565;
+    font-weight: normal;
+}
+
+#header ul {
+    width: 100%;
+    height: 35px;
+    background: #ededed;
+    clear: both;
+    border: 1px solid #ededed;
+}
+
+#header ul li {
+    float: left;
+    height: 35px;
+    line-height: 35px;
+}
+
+#header ul li img {
+    margin: 13px 5px 0;
+    display: block;
+}
+
+.guild, .msg, .msg1 {
+    width: 100%;
+    height: 125px;
+    background: #d8ecf6;
+    border: 1px solid #bbe7f0;
+    color: #3986ac;
+    margin: 30px auto;
+}
+
+.guild dl {
+    padding: 0 15px;
+}
+
+.guild dl dt {
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    clear: both;
+}
+
+.guild code {
+    padding: 0 5px;
+}
+
+.guild dl dd {
+    line-height: 22px;
+    font-size: 12px;
+}
+
+.guild dl dd span, .msg span {
+    background: #ec4d29;
+    color: #fff;
+    padding: 1px 3px 2px;
+    margin: 0 5px 0 0;
+}
+
+.tab {
+    width: 100%;
+    height: 44px;
+    border-bottom: 1px solid #ccc;
+}
+
+.tab ul {
+    background: #fff;
+}
+
+.tab ul li {
+    float: left;
+    background: #fff;
+}
+
+.tab ul li a {
+    display: block;
+    float: left;
+    padding: 0 15px;
+    height: 42px;
+    line-height: 42px;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+    border-top: 2px solid #fff;
+    font-size: 14px;
+}
+
+.tab ul li a:hover, .tab ul li a.sel {
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-top: 2px solid #d0250f;
+    margin-top: 1px;
+}
+
+.main ul {
+    padding: 30px 0;
+    height: 40px;
+    clear: both;
+}
+
+.main ul.bg {
+    height: 20px;
+    padding: 0;
+    background: url(../img/bg_1.gif) repeat-x;
+}
+
+.main ul li.bg {
+    width: 33%;
+    height: 20px;
+    background: url(../img/bg_2.gif) repeat-x;
+}
+
+.main ul li {
+    float: left;
+    width: 33%;
+    line-height: 40px;
+    color: #767676;
+}
+
+.main ul li img {
+    margin: 0 10px;
+    vertical-align: middle;
+}
+
+.main ul li span {
+    background: url(../img/icon_7.gif) no-repeat 0 center;
+    padding-left: 15px;
+}
+
+.msg {
+    height: 36px;
+    line-height: 36px;
+    font-size: 12px;
+}
+
+.msg span {
+    margin: 0 5px 0 15px;
+}
+
+.fromBox {
+    background: #f9f9f9;
+}
+
+.fromBox ul {
+    padding: 0 15px;
+    overflow: hidden;
+    clear: both;
+}
+
+.fromBox ul li {
+    width: 46%;
+    float: left;
+}
+
+.fromBox ul li.w_50 {
+    width: 8%;
+    text-indent: -999em;
+}
+
+.fromBox ul li p {
+    line-height: 30px;
+    font-size: 14px;
+}
+
+.fromBox ul li p code {
+    color: #f00;
+}
+
+.fromBox ul li p a {
+    color: #0c628e;
+}
+
+.fromBox ul li .inp_txt {
+    width: 100%;
+    height: 31px;
+    border: 1px solid #ccc;
+    background: #fff;
+    text-indent: 3px;
+}
+
+.fromBox ul li .rad {
+    margin: 10px 5px;
+    vertical-align: middle;
+}
+
+.pr30 {
+    padding-right: 50px;
+}
+
+.search {
+    padding: 15px;
+}
+
+.search p {
+    height: 35px;
+    background: #4c8ffd;
+    text-align: center;
+}
+
+.search p a {
+    line-height: 35px;
+    padding-right: 20px;
+    background: url(../img/bg_3.gif) no-repeat right center;
+    color: #fff;
+}
+
+.shop {
+}
+
+.shop h2 {
+    background: url(../img/bg_4.gif) no-repeat 0 center;
+    padding-left: 20px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 18px;
+    font-family: "微软雅黑";
+    border-bottom: 1px solid #ccc;
+    font-weight: normal;
+}
+
+.msg1 p {
+    padding: 0 15px;
+    line-height: 30px;
+    font-size: 12px;
+}
+
+.msg1 p span a {
+    padding: 0 10px;
+}
+
+.listBox {
+    margin: 15px auto;
+}
+
+.listBox h3 {
+    width: 100%;
+    clear: both;
+    overflow: hidden;
+}
+
+.listBox h3 a {
+    display: block;
+    height: 35px;
+    width: 125px;
+    text-align: center;
+    line-height: 35px;
+    background: #34a946;
+    color: #fff;
+}
+
+.listBox ul {
+    width: 100%;
+    padding: 20px 0 10px 0;
+    clear: both;
+    border-bottom: 1px solid #ccc;
+    overflow: hidden;
+}
+
+.listBox ul li {
+    float: left;
+    line-height: 24px;
+}
+
+.listBox ul li.l_1 {
+    width: 5%;
+}
+
+.l_2, .l_3, .l_4, .l_5, .l_6, .l_7, .l_8, .l_9, .l_10 {
+    width: 7%;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.l_2 {
+    width: 9%;
+}
+
+.listBox ul li.l_4 {
+    width: 30%;
+}
+
+.listBox ul li.l_4 a {
+    color: #0c628e;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.listBox ul li.l_2 img {
+    width: 98px;
+    height: 58px;
+    border: 1px solid #ccc;
+}
+
+.listBox ul li span {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.msg1 {
+    height: auto;
+    overflow: hidden;
+    padding: 10px 0;
+}
+
+.LinkBot {
+    display: block;
+    width: 94px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    color: #fff;
+    background: #4c8ffd;
+    font-size: 14px;
+}
+
+.Btn2 {
+    background: #e4e4e4;
+    border-left: 4px solid #34a946;
+    padding: 5px;
+}
+input.error { border: 1px dotted red; }
+label.error {
+    /* remove the next line when you have trouble in IE6 with labels in list */
+    float: right;
+    width: 350px;
+    color: red;
+    font-style: italic
+}

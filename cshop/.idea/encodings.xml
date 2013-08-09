@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cshop-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cshop-dao" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cshop-domain" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cshop-rpc" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cshop-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cshop-service/src/main/java/com/jingpaidang/cshop/service/UserService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cshop-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cshop-web/src/main/java/com/jingpaidang/cshop/action/user/UserAction.java" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>
+

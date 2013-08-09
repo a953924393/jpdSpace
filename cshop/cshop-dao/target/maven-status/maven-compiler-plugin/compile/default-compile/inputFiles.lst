@@ -1,0 +1,8 @@
+/home/jackchen/newSpace/cshop-dao/src/main/java/com/jingpaidang/cshop/dao/convert/ConvertRuleMapper.java
+/home/jackchen/newSpace/cshop-dao/src/main/java/com/jingpaidang/cshop/dao/wares/WaresMapper.java
+/home/jackchen/newSpace/cshop-dao/src/main/java/com/jingpaidang/cshop/dao/user/UserMapper.java
+/home/jackchen/newSpace/cshop-dao/src/main/java/com/jingpaidang/cshop/dao/example/ExampleMapper.java
+/home/jackchen/newSpace/cshop-dao/src/main/java/com/jingpaidang/cshop/dao/user/AccountMapper.java
+/home/jackchen/newSpace/cshop-dao/src/main/java/com/jingpaidang/cshop/dao/category/ItemCategoryMapper.java
+/home/jackchen/newSpace/cshop-dao/src/main/java/com/jingpaidang/cshop/dao/category/CategoryPropertyMapper.java
+/home/jackchen/newSpace/cshop-dao/src/main/java/com/jingpaidang/cshop/dao/move/MoveHistoryMapper.java

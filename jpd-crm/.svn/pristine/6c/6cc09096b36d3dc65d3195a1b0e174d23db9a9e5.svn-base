@@ -1,0 +1,83 @@
+package com.jingpaidang.crm.common.utils;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+
+public class AjaxUtil {
+	/**
+	 * json对象转换流输出
+	 * @param list 复杂对象 
+	 * @param obj 简单对象
+	 * @throws IOException
+	 */
+	@SuppressWarnings("unchecked")
+	public static void writerJsonStr(List list, Object obj,HttpServletResponse response) throws IOException{ 
+		try {
+	        response.setContentType("application/json;charset=UTF-8"); 
+	        if(null!=obj){
+	        	 JSONObject jobj = JSONObject.fromObject(obj);
+	        	 response.getWriter().print(jobj);     
+	        }
+	        if(null!=list){
+	        	JSONArray arr = JSONArray.fromObject(list);
+	        	response.getWriter().print(arr);     
+	        } 
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+    }
+	
+	public static void writerStr(String str,HttpServletResponse response) throws IOException{ 
+		PrintWriter out = null;
+		try {
+			//response.setCharacterEncoding("UTF-8");
+			out = response.getWriter();  
+			out.write(str);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally{
+			if(out!=null){
+				out.flush();
+				out.close();
+				out = null;
+			}
+		}
+    }
+	
+	public static void writerJsonObject(Object obj,HttpServletResponse response) throws IOException{ 
+		PrintWriter out = null;
+		try {
+			//response.setCharacterEncoding("UTF-8");
+			response.setContentType("application/json;charset=UTF-8");
+			out = response.getWriter(); 
+			JSONObject jobj = JSONObject.fromObject(obj);
+			out.write(jobj.toString());
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally{
+			if(out!=null){
+				out.flush();
+				out.close();
+				out = null;
+			}
+		}
+    } 
+	
+	public static void writerJsonList(List<?> list,HttpServletResponse response) throws IOException{ 
+		try {
+	        response.setContentType("application/json;charset=UTF-8"); 
+	        JSONArray arr = JSONArray.fromObject(list);
+        	response.getWriter().print(arr);   
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+    }
+	
+}

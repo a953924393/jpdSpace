@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<#include "/WEB-INF/template/common/common_header.ftl">
+<link rel="stylesheet" href="/js/colorbox/colorbox.css" />
+<link href="/css/move.css" rel="stylesheet">
+<body>
+<#include "/WEB-INF/template/common/common_navbar.ftl">
+<div id="content">
+	<#include "/WEB-INF/template/common/common_sidebar.ftl">
+	<div class="right">
+		<div id="breadcrumb">
+			店铺管理&nbsp;&gt;&gt;一键搬家
+		</div>
+		<div style="clear:left;"></div>
+		<div class="move">
+			<div class="move_step">
+				<ul>
+					<li style="margin-left:0px;"><img src="/images/step2_1.jpg"></li>
+					<li><img src="/images/step3_2.jpg"></li>
+					<li><img src="/images/step3.jpg"></li>
+				</ul>
+			</div>
+			<div class="target">
+			<table cellpadding="0" cellspacing="0" width="988" style="border:0;">
+				<tr>
+					<th width="4%"><input id="checkAllShops" name="checkAllShops" type="checkbox"></th>
+					<th width="5%">平台</th>
+					<th width="20%">目标网店</th>
+					<th width="25%">目标网店类目</th>
+					<th width="20%">店铺分类</th>
+					<th width="20%">类目转换规则</th>
+					<th width="6%">操作</th>
+				</tr>
+				<tr>
+					<td style="text-align:center;"><input name="platform" type="checkbox" value=""/></td>
+					<td><span title="京东" flag=3></span></td>
+					<td>
+						<select name="tarAccountId" id="accounts">
+                        	<option value="-1">请选择...</option>
+                        </select>
+						<p>
+                        	<font id="div1" color="red"></font>
+                        </p>
+					</td>
+					<td>
+						<select name="tarCategoryId" id="categories">
+                        	<option value="-1">请选择...</option>
+                        </select>
+                        <p>
+                        	<font id="div2" color="red"></font>
+                        </p>
+					</td>
+					<td>
+						<select name="tarShopCategoryId" id="shopCategories">
+                        	<option value="-1">请选择...</option>
+                        </select>
+					</td>
+					<td>
+						<select name="convertRule" id="convert-rule-sel">
+                        	<option value="-1">请选择...</option>
+                        </select>
+						<button id="refresh">刷新</button>
+					</td>
+					<td style="text-align:center; vertical-align:middle;">
+						<input id="submit-move" type="image" src="/images/publish.jpg">
+					</td>
+				</tr>
+				<tr>
+					<td colspan="7">如果类目转换规则为空，可以点击<a href="${rootUrl}/convert/convert!list.action">设置平台转换规则</a>添加，添加完成后点击“刷新”按钮</td>
+				</tr>
+			</table>
+			<input type="hidden" id="src-account-id" value="${accountId}">
+            <input type="hidden" id="src-category-id" value="${categoryId}">
+            <input type="hidden" id="items-2-moving" value="${itemIds}">
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="/js/colorbox/jquery.colorbox.js"></script>
+<script type="text/javascript" src="/js/moveTarget.js"></script>
+</body>
+</html>

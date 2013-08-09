@@ -1,0 +1,40 @@
+package com.jingpaidang.crm.service.order.impl;
+
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
+import com.jingpaidang.crm.dao.order.MemberOrderMapper;
+import com.jingpaidang.crm.domain.order.MemberOrder;
+import com.jingpaidang.crm.service.order.MemberOrderService;
+/**
+ * 
+ * @ClassName:	MemberOrderServiceImpl 
+ * @Description:TODO(会员订单业务实现) 
+ * @author:	Alex
+ * @date:	2013-8-8 上午11:48:25 
+ *
+ */
+@Service
+public class MemberOrderServiceImpl implements MemberOrderService {
+	
+	@Resource
+	private MemberOrderMapper memberOrderMapper ;
+
+	@Override
+	public int insert(MemberOrder memberOrder) {
+		return memberOrderMapper.insert(memberOrder);
+	}
+
+	@Override
+	public boolean isOrderExist(String orderId) {
+		List<MemberOrder> list = memberOrderMapper.getMemberOrderByOrderId(orderId);
+		if(list==null){
+			return false ;
+		}
+		return list.size()>0?true:false ;
+	}
+
+}

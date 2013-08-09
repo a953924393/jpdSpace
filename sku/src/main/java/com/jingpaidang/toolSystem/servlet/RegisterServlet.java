@@ -1,0 +1,52 @@
+package com.jingpaidang.toolSystem.servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Date;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.jingpaidang.pub.operauser.api.UserAPI;
+import com.jingpaidang.pub.operauser.client.User;
+import com.jingpaidang.pub.operauser.util.XMLUtil;
+import com.jingpaidang.toolSystem.common.CommonUtil;
+
+public class RegisterServlet extends HttpServlet {
+	protected void doGet(HttpServletRequest request,
+			HttpServletResponse response) throws IOException, ServletException {
+		this.doPost(request, response);
+	}
+	protected void doPost(HttpServletRequest request,
+			HttpServletResponse response)throws IOException, ServletException  {
+		request.setCharacterEncoding("utf-8");
+        response.setContentType("text/html;charset=utf-8");
+        response. setCharacterEncoding("UTF-8");
+		String userEmail = request.getParameter("userEmail") ;
+		String password = CommonUtil.md5(request.getParameter("password")) ;
+		String userQq = request.getParameter("userQq") ;
+		String userTelephone = request.getParameter("userTelephone") ;
+		User user = new User();
+		user.setUserEmail(userEmail) ;
+		user.setJshopUserName(userEmail);
+		user.setJshopUserPassword(password);
+		user.setUserQq(userQq);
+		user.setUserTelephone(userTelephone);
+		user.setCreateTime(XMLUtil.convertToXMLGregorianCalendar(new Date())) ;
+		user.setModifyTime(XMLUtil.convertToXMLGregorianCalendar(new Date()));
+		user.setOperator("sku");
+		Integer id = UserAPI.addUser(user) ;
+		PrintWriter out = response.getWriter() ;
+		HttpSession session = request.getSession() ;
+		boolean flag = false ;
+		if(id!=null && id.intValue()>0){
+			session.setAttribute("user", user.getUserEmail()) ;
+			session.setMaxInactiveInterval(60*60);
+			flag = true ;
+		}
+		out.print("{msg:"+flag+"}") ;
+	}
+}

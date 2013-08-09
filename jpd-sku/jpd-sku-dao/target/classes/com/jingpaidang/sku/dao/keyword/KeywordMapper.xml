@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//ibatis.apache.org//DTD Config 3.1//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jingpaidang.sku.dao.keyword.KeywordMapper">
+
+    <insert id="addKeyword" parameterType="Keyword">
+        INSERT INTO keywords
+        (
+          keyName,
+          createTime,
+          updateTime,
+          number,
+          status
+        )
+        VALUES
+        (
+          #{keyName},
+          #{createTime},
+          #{updateTime},
+          #{number},
+          #{status}
+        )
+    </insert>
+    <update id="updateKeyword" parameterType="Keyword">
+        UPDATE  keywords  SET
+        keyName =  #{keyName},
+         createTime = #{createTime},
+         updateTime = #{updateTime},
+         number = #{number},
+         status = #{status}
+         WHERE id = #{id}
+ </update>
+
+    <insert id="addKeywordList" parameterType="java.util.List">
+        INSERT INTO keywords
+        (
+        keyName,
+        createTime
+        ) VALUES
+        <foreach collection="list" item="keywordList" open="(" separator="),(" close=")">
+            #(keywordList),
+            curdate()
+        </foreach>
+
+    </insert>
+
+    <select id="findKeywordByName" parameterType="java.lang.String" resultType="Keyword">
+        SELECT
+              id        AS id,
+              keyName AS      keyName,
+              createTime AS             createTime,
+              updateTime AS             updateTime,
+              number   AS               number,
+              status    AS              status
+        FROM
+              keywords
+        WHERE
+        keyName = #{keyName}
+
+    </select>
+
+    <select id="findKeywords" parameterType="java.util.List" resultType="Keyword">
+
+        SELECT
+        id AS id,
+        keyName AS keyName,
+        createTime AS createTime,
+        updateTime AS updateTime,
+        number AS number,
+        status AS status
+        FROM
+        keywords
+        WHERE
+        keyName IN
+        <foreach collection="list" item="strings" open="(" separator="," close=")">
+            #{strings}
+        </foreach>
+
+
+    </select>
+    <delete id="deleteKeywordByTime" parameterType="int">
+        DELETE FROM keywords
+        WHERE
+        DATEDIFF(curdate(),date(createTime)) <![CDATA[>]]> #{i} and (number = 0 or number is null)
+    </delete>
+
+    <select id="findAllKeyword" resultType="Keyword">
+          SELECT
+              id        AS id,
+              keyName AS      keyName,
+              createTime AS             createTime,
+              updateTime AS             updateTime,
+              number   AS               number,
+              status    AS              status
+        FROM
+              keywords
+
+    </select>
+</mapper>

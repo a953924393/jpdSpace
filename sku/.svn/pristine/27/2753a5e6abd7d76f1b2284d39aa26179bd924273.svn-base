@@ -1,0 +1,43 @@
+package com.jingpaidang.toolSystem.service;
+
+import com.jingpaidang.toolSystem.domain.Keyword;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Created with IntelliJ IDEA.
+ * User: JackChan
+ * Date: 7/17/13
+ * Time: 10:43 AM
+ */
+public class JingdongSkuThread implements Runnable{
+
+
+    List<Keyword> queryKeyList = null;
+
+    public JingdongSkuThread(List<Keyword> queryKeyList) {
+        this.queryKeyList = queryKeyList;
+    }
+
+    public JingdongSkuThread(){};
+
+    @Override
+    public void run() {
+
+            JingdongSku jingdongSku = new JingdongSku();
+            System.err.println("开始任务");
+            try {
+                for(Keyword queryKey : queryKeyList) {
+
+                    jingdongSku.addSkus(queryKey);
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+
+
+    }
+}

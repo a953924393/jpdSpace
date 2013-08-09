@@ -1,0 +1,27 @@
+package com.jingpaidang.cshop.rpc.jd;
+
+import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
+
+/**
+ * Created with IntelliJ IDEA.
+ * User: JackChan
+ * Date: 7/31/13
+ * Time: 3:24 PM
+ */
+@Aspect
+public class JdServiceAspect {
+    @Pointcut("execution(com.jingpaidang.cshop.rpc.jd.JdService)")
+    private void log() {
+    }
+    @Before("log()")
+    public void logInterceptor_before() {
+        System.out.println("Before LOG:"+" info has loged to file");
+    }
+    @After("log() && args(accessToken)")
+    public void logInterceptor_after(String accessToken) {
+        System.out.println("After LOG:"+accessToken+" info has loged to file");
+    }
+}

@@ -1,0 +1,9 @@
+/home/jackchen/newSpace/cshop-service/src/main/java/com/jingpaidang/cshop/service/example/ExampleService.java
+/home/jackchen/newSpace/cshop-service/src/main/java/com/jingpaidang/cshop/service/PlatformRpcService.java
+/home/jackchen/newSpace/cshop-service/src/main/java/com/jingpaidang/cshop/service/wares/WaresService.java
+/home/jackchen/newSpace/cshop-service/src/main/java/com/jingpaidang/cshop/service/convert/ConvertRuleService.java
+/home/jackchen/newSpace/cshop-service/src/main/java/com/jingpaidang/cshop/service/move/MoveHistoryService.java
+/home/jackchen/newSpace/cshop-service/src/main/java/com/jingpaidang/cshop/service/move/MoveService.java
+/home/jackchen/newSpace/cshop-service/src/main/java/com/jingpaidang/cshop/service/category/CategoryPropertyService.java
+/home/jackchen/newSpace/cshop-service/src/main/java/com/jingpaidang/cshop/service/category/ItemCategoryService.java
+/home/jackchen/newSpace/cshop-service/src/main/java/com/jingpaidang/cshop/service/UserService.java

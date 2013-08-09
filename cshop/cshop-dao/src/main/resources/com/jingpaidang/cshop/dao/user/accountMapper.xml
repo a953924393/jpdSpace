@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2011-2012 the original author or authors.
+  ~
+  ~  http://www.jingpaidang.com
+  -->
+
+<!DOCTYPE mapper
+        PUBLIC "-//ibatis.apache.org//DTD Config 3.1//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jingpaidang.cshop.dao.user.AccountMapper">
+
+    <select id="findAccountById" parameterType="int" resultType="Account">
+        SELECT
+          id AS id,
+          platform_login_id AS platformLoginId,
+          platform_login_name AS platformLoginName,
+          platform_login_password AS platformLoginPassword,
+          platform_flag AS platformFlag,
+          jshop_user_id AS jshopUserId,
+          platform_access_token AS platformAccessToken,
+          platform_refresh_token AS platformRefreshToken,
+          access_token_expire_time AS accessTokenExpireTime,
+          refresh_token_expire_time AS refreshTokenExpireTime,
+          create_time AS createTime,
+          modify_time AS modifyTime,
+          operator AS operator,
+          platform_shop_name AS platformShopName
+		FROM jshop_platform_account
+		WHERE id=#{id}
+    </select>
+    <select id="findByPlatformLoginId" resultType="Account" parameterType="java.lang.String">
+		select id AS id,
+          platform_login_id AS platformLoginId,
+          platform_login_name AS platformLoginName,
+          platform_login_password AS platformLoginPassword,
+          platform_flag AS platformFlag,
+          jshop_user_id AS jshopUserId,
+          platform_access_token AS platformAccessToken,
+          platform_refresh_token AS platformRefreshToken,
+          access_token_expire_time AS accessTokenExpireTime,
+          refresh_token_expire_time AS refreshTokenExpireTime,
+          create_time AS createTime,
+          modify_time AS modifyTime,
+          operator AS operator,
+          platform_shop_name AS platformShopName
+        from jshop_platform_account where platform_login_id=#{platformLoginId}
+	</select>
+    <!-- findById必须和接口中的方法名一样 返回一个User 就是刚才的别名 如果不弄别名要连类路径一起写 麻烦 -->
+    <select id="findByRefreshToken" resultType="Account" parameterType="java.lang.String">
+		select id AS id,
+          platform_login_id AS platformLoginId,
+          platform_login_name AS platformLoginName,
+          platform_login_password AS platformLoginPassword,
+          platform_flag AS platformFlag,
+          jshop_user_id AS jshopUserId,
+          platform_access_token AS platformAccessToken,
+          platform_refresh_token AS platformRefreshToken,
+          access_token_expire_time AS accessTokenExpireTime,
+          refresh_token_expire_time AS refreshTokenExpireTime,
+          create_time AS createTime,
+          modify_time AS modifyTime,
+          operator AS operator,
+          platform_shop_name AS platformShopName
+
+          from jshop_platform_account where platform_refresh_token=#{refreshToken}
+	</select>
+    <select id="findByAccessToken" resultType="Account" parameterType="java.lang.String">
+		select id AS id,
+          platform_login_id AS platformLoginId,
+          platform_login_name AS platformLoginName,
+          platform_login_password AS platformLoginPassword,
+          platform_flag AS platformFlag,
+          jshop_user_id AS jshopUserId,
+          platform_access_token AS platformAccessToken,
+          platform_refresh_token AS platformRefreshToken,
+          access_token_expire_time AS accessTokenExpireTime,
+          refresh_token_expire_time AS refreshTokenExpireTime,
+          create_time AS createTime,
+          modify_time AS modifyTime,
+          operator AS operator,
+          platform_shop_name AS platformShopName
+          from jshop_platform_account where platform_access_token=#{accessToken}
+	</select>
+    <select id="findAll" resultType="Account">
+		select id AS id,
+          platform_login_id AS platformLoginId,
+          platform_login_name AS platformLoginName,
+          platform_login_password AS platformLoginPassword,
+          platform_flag AS platformFlag,
+          jshop_user_id AS jshopUserId,
+          platform_access_token AS platformAccessToken,
+          platform_refresh_token AS platformRefreshToken,
+          access_token_expire_time AS accessTokenExpireTime,
+          refresh_token_expire_time AS refreshTokenExpireTime,
+          create_time AS createTime,
+          modify_time AS modifyTime,
+          operator AS operator,
+          platform_shop_name AS platformShopName
+          from jshop_platform_account
+	</select>
+    <!--根据用户ID查询-->
+    <select id="findByUserId" resultType="Account" parameterType="int">
+		select
+		  id AS id,
+          platform_login_id AS platformLoginId,
+          platform_login_name AS platformLoginName,
+          platform_login_password AS platformLoginPassword,
+          platform_flag AS platformFlag,
+          jshop_user_id AS jshopUserId,
+          platform_access_token AS platformAccessToken,
+          platform_refresh_token AS platformRefreshToken,
+          access_token_expire_time AS accessTokenExpireTime,
+          refresh_token_expire_time AS refreshTokenExpireTime,
+          create_time AS createTime,
+          modify_time AS modifyTime,
+          operator AS operator,
+          platform_shop_name AS platformShopName
+		from jshop_platform_account
+		where jshop_user_id=#{jshopUserId}
+	</select>
+    <insert id="insert" parameterType="Account">
+		insert into
+		jshop_platform_account
+		(platform_login_id,
+		platform_login_name,
+		platform_login_password,
+		platform_flag,
+		jshop_user_id,
+		platform_access_token,
+		platform_refresh_token,
+		access_token_expire_time,
+		refresh_token_expire_time,
+		create_time,
+		modify_time,
+		operator,
+		platform_shop_name
+		)
+		values (
+		#{platformLoginId},
+		#{platformLoginName},
+		#{platformLoginPassword},
+		#{platformFlag},
+		#{jshopUserId},
+		#{platformAccessToken},
+		#{platformRefreshToken},
+		#{accessTokenExpireTime},
+		#{refreshTokenExpireTime},
+		#{createTime},
+		#{modifyTime},
+		#{operator},
+		#{platformShopName}
+		)
+	</insert>
+    <update id="update" parameterType="Account">
+         UPDATE jshop_platform_account
+         SET
+         platform_login_name = #{platformLoginName},
+         platform_login_password = #{platformLoginPassword},
+         platform_flag = #{platformFlag},
+         jshop_user_id = #{jshopUserId},
+         platform_access_token = #{platformAccessToken},
+         platform_refresh_token = #{platformRefreshToken},
+         access_token_expire_time = #{accessTokenExpireTime},
+         refresh_token_expire_time = #{refreshTokenExpireTime},
+         create_time = #{createTime},
+         modify_time = #{modifyTime},
+         operator = #{operator},
+         platform_shop_name = #{platformShopName}
+         WHERE
+         id = #{id}
+    </update>
+
+</mapper>

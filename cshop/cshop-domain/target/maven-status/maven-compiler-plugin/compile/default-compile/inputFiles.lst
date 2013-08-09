@@ -1,0 +1,13 @@
+/home/jackchen/newSpace/cshop-domain/src/main/java/com/jingpaidang/cshop/domain/category/ItemCategory.java
+/home/jackchen/newSpace/cshop-domain/src/main/java/com/jingpaidang/cshop/domain/user/Account.java
+/home/jackchen/newSpace/cshop-domain/src/main/java/com/jingpaidang/cshop/domain/example/Example.java
+/home/jackchen/newSpace/cshop-domain/src/main/java/com/jingpaidang/cshop/App.java
+/home/jackchen/newSpace/cshop-domain/src/main/java/com/jingpaidang/cshop/domain/convert/PlatformConvertRule.java
+/home/jackchen/newSpace/cshop-domain/src/main/java/com/jingpaidang/cshop/domain/vo/user/User_Accounts.java
+/home/jackchen/newSpace/cshop-domain/src/main/java/com/jingpaidang/cshop/domain/ware/WareItem.java
+/home/jackchen/newSpace/cshop-domain/src/main/java/com/jingpaidang/cshop/domain/category/CategoryProperty.java
+/home/jackchen/newSpace/cshop-domain/src/main/java/com/jingpaidang/cshop/domain/user/User.java
+/home/jackchen/newSpace/cshop-domain/src/main/java/com/jingpaidang/cshop/domain/category/CategoryPropertyValue.java
+/home/jackchen/newSpace/cshop-domain/src/main/java/com/jingpaidang/cshop/domain/move/MoveHistory.java
+/home/jackchen/newSpace/cshop-domain/src/main/java/com/jingpaidang/cshop/domain/category/AccountCategory.java
+/home/jackchen/newSpace/cshop-domain/src/main/java/com/jingpaidang/cshop/domain/convert/ConvertRuleDetail.java

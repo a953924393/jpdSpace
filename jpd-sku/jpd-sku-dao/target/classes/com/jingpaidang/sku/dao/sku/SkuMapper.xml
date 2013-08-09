@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//ibatis.apache.org//DTD Config 3.1//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jingpaidang.sku.dao.sku.SkuMapper">
+    <delete id="deleteSkuRelateKeyByTime" parameterType="int">
+        DELETE FROM skus
+        where keyId in (select k.id from keywords k where DATEDIFF(curdate(),date(createTime)) <![CDATA[>]]> #{i} and number = 0 )
+    </delete>
+
+    <delete id="deleteYesterday">
+        delete from jpd_sku_db.skus
+        where date(createTime) <![CDATA[<]]> curdate()
+    </delete>
+
+    <insert id="addSku" parameterType="Sku">
+        insert into skus
+        (
+            skuNum,
+            keyId,
+            location,
+            skuName,
+             createTime,
+             updateTime
+        )
+        values
+        (
+            skuNum = #{skuNum},
+            keyId = #{keyId},
+            location = #{location},
+            skuName = #{skuName},
+             createTime = #{createTime},
+             updateTime = #{updateTime}
+        )
+    </insert>
+
+    <insert id="addSkuList" parameterType="java.util.List">
+        insert into skus
+        (
+        skuNum,
+        keyId,
+        location,
+        skuName,
+        createTime,
+        updateTime
+        )
+        values
+        <foreach collection="list" item="skuList" open="(" separator="),(" close=")">
+            skuNum = #{skuNum},
+            keyId = #{keyId},
+            location = #{location},
+            skuName = #{skuName},
+            createTime = #{createTime},
+            updateTime = #{updateTime}
+        </foreach>
+    </insert>
+
+    <select id="findSkuBySkuNumAndKey" resultType="Sku">
+         select
+             s.id AS id,
+            s.skuNum AS skuNum,
+            s.keyId AS  keyId,
+            s.location AS location,
+            s.skuName AS  skuName,
+             s.createTime AS createTime,
+             s.updateTime AS updateTime
+          FROM skus s
+          left join keywords k  on s.keyId = k.id
+          where s.skuNum = #{skuNum} and keyName = #{keyName}
+          order by s.createTime desc;
+
+
+
+    </select>
+
+</mapper>

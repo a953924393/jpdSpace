@@ -1,0 +1,144 @@
+body{
+		margin:0;
+		padding:0;
+		background-color:#F4F4F4;
+		font: 12px / 1.5 '宋体', tahoma, Srial, helvetica, sans-serif;
+	}
+	div{
+		display:block;
+	}
+	/** 重置超链接元素 **/
+	a {
+		text-decoration: none;
+		color: #0073c6;
+	}
+
+	a:hover {
+		text-decoration: underline;
+		color: #0073c6;
+	}
+	#site-nav{
+		background: none repeat scroll 0 0 #333333;
+    	height: 40px;
+    	min-width: 990px;
+    	width: auto;
+	}
+	#header{
+		background-color:#333333;
+		border-left:1px #eeeeee solid;
+		border-right:1px #eeeeee solid;
+		line-height:40px;
+		margin: 0 auto;
+		width:988px;
+   		position: relative;
+    	z-index: 10000;
+	}
+	#content{
+		margin: 40px auto 0px;
+    	width: 990px;
+	}
+	.nav-title{
+		border: 0 none;
+    	color: #ffffff;
+    	float: left;
+    	font-size: 100%;
+    	margin: 0;
+    	padding: 0;
+    	vertical-align: baseline;
+	}
+	.con-left{
+		float:left;
+		height:435px;
+		width:495px;
+	}
+	.con-right{
+		width:495px;
+		float:left;
+		height:435px;
+		background-color:#FFFFFF;
+	}
+	.login-title{
+		margin:50px 50px 10px 40px;
+		height:50px;
+	}
+	.login-t-t{
+		margin: 0;
+    	padding: 0 0 0 10px;
+    	vertical-align: baseline;
+		color:#0073c6;
+		float:left;
+		line-height:45px;
+		font-family:"黑体";
+		font-size:24px;
+		
+	}
+	.login-t-w{
+		margin: 0;
+    	padding: 0 0 0 10px;
+    	vertical-align: baseline;
+		color:#343434;
+		float:left;
+		line-height:45px;
+		font-family:"黑体";
+		font-size:24px;
+		
+	}
+	.login-t-p{
+		margin: 0;
+    	padding: 0;
+		float:left;
+	}
+	.login-form{
+		margin:20px 100px auto 65px;
+	}
+	.input-text{
+		width:324px;
+		height:35px;
+		padding:0px;
+		line-height:30px;
+	}
+	.form-ele{
+		padding:10px 0;
+	}
+	.form-ele1{
+		padding:5px 0;
+	}
+	.form-ele1 p{
+		color: #666666;
+		font-family: "宋体",Arial;
+		font-size: 12px;
+		font-weight: normal;
+		line-height: 150%;
+		text-decoration: none;
+		vertical-align: middle;
+		float:left;
+	}
+	.forget-p{
+		color: #666666;
+		font-family: "宋体",Arial;
+		font-size: 12px;
+		font-weight: normal;
+		line-height: 150%;
+		text-decoration: none;
+		vertical-align: middle;
+		padding-top:10px;
+	}
+	.hr{
+		border-bottom:1px #EDEDED solid;
+		padding:5px 0;
+	}
+	#footer{
+		margin: 40px auto 0px;
+		width:990px;
+		height:200px;
+		text-align:center;
+	}
+	#footer p{
+		color: #666666;
+		font-family: "宋体",Arial;
+		font-size: 12px;
+		font-weight: normal;
+		line-height: 150%;
+		text-decoration: none;
+		vertical-align: middle;
+	}

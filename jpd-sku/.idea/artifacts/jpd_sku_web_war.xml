@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="jpd-sku-web:war">
+    <output-path>$PROJECT_DIR$/jpd-sku-web/target</output-path>
+    <root id="archive" name="jpd-sku-web.war">
+      <element id="artifact" artifact-name="jpd-sku-web:war exploded" />
+    </root>
+  </artifact>
+</component>

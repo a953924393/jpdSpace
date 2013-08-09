@@ -1,0 +1,421 @@
+package com.jingpaidang.toolSystem.dao;
+
+import com.jingpaidang.toolSystem.domain.Keyword;
+import com.jingpaidang.toolSystem.domain.Sku;
+import com.jingpaidang.toolSystem.util.JdbcUtils;
+import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.sql.*;
+import java.util.*;
+import java.util.Date;
+
+/**
+ * Created with IntelliJ IDEA.
+ * User: JackChan
+ * Date: 7/16/13
+ * Time: 6:45 PM
+ */
+
+public class SkuDao {
+
+
+    private static final Logger logger = LoggerFactory.getLogger(KeywordDao.class);
+
+
+    /**
+     * 删除今天之前所有的sku
+     */
+    public void deleteSkuByTime() {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        try {
+            conn = JdbcUtils.getConnection();
+
+            String sql = "delete from jpd_sku_db.skus  where date(createTime) < curdate()";
+            stmt = conn.prepareStatement(sql);
+
+
+            int i = stmt.executeUpdate();
+            logger.info("========按照日期为删除sku完成,删除  " + i + " 条数据");
+        } catch (SQLException e) {
+
+            logger.info("===========删除sku出错");
+            throw new RuntimeException(e);
+        } finally {
+            JdbcUtils.release(rs, stmt, conn);
+        }
+
+    }
+
+    /**
+     * 单个添加sku
+     *
+     * @param keyword
+     */
+    public void addSku(Sku sku, Keyword keyword) {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        try {
+            conn = JdbcUtils.getConnection();
+            String sql = "insert into skus (skuNum, keyId, location, createTime) values(?,?,?,?)";
+            stmt = conn.prepareStatement(sql);
+            stmt.setString(1, sku.getSkuNum());
+            stmt.setInt(2, keyword.getId());
+            stmt.setInt(3, sku.getLocation());
+            stmt.setTimestamp(4, new Timestamp(new java.util.Date().getTime()));
+
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+
+            logger.info(sku.getSkuNum() + "===关键词" + keyword.getKeyName() + "===========插入sku出错");
+            throw new RuntimeException(e);
+        } finally {
+            JdbcUtils.release(rs, stmt, conn);
+        }
+
+    }
+
+    public void addSkuList(List<Sku> skuList) {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        int keyId = 0;
+
+        try {
+            conn = JdbcUtils.getConnection();
+            String sql = "insert into skus (skuNum, keyId, location, skuName, createTime) values(?,?,?,?,?)";
+            stmt = conn.prepareStatement(sql, ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
+
+            for (Sku sku : skuList) {
+                keyId = sku.getKeyId();
+                stmt.setString(1, sku.getSkuNum());
+                stmt.setInt(2, sku.getKeyId());
+                stmt.setInt(3, sku.getLocation());
+                stmt.setString(4, sku.getSkuName());
+                stmt.setTimestamp(5, new Timestamp(new java.util.Date().getTime()));
+                stmt.addBatch();
+            }
+            stmt.executeBatch();
+            if (keyId == 0) {
+                logger.info("key为" + keyId + "=====插入的sku集合为空");
+
+            }
+
+        } catch (SQLException e) {
+            logger.info("key为" + keyId + "======================批量插入出错");
+            throw new RuntimeException(e);
+        } finally {
+            JdbcUtils.release(rs, stmt, conn);
+        }
+
+    }
+
+    /**
+     * 批量添加sku,
+     *
+     * @param keywordListMap
+     */
+    public void addSkus(Map<Keyword, List<Sku>> keywordListMap) {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        try {
+            conn = JdbcUtils.getConnection();
+            String sql = "insert into skus (skuNum, keyId, location, createTime) values(?,?,?,?)";
+            stmt = conn.prepareStatement(sql, ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            Set<Map.Entry<Keyword, List<Sku>>> entries = keywordListMap.entrySet();
+            for (Map.Entry<Keyword, List<Sku>> listEntry : entries) {
+                Keyword key = listEntry.getKey();
+                List<Sku> value = listEntry.getValue();
+                for (Sku sku : value) {
+                    stmt.setString(1, sku.getSkuNum());
+                    stmt.setInt(2, key.getId());
+                    stmt.setInt(3, sku.getLocation());
+                    stmt.setTimestamp(4, new Timestamp(new java.util.Date().getTime()));
+
+                    stmt.addBatch();
+                }
+
+            }
+            stmt.executeBatch();
+        } catch (SQLException e) {
+            logger.info("======================批量插入出错");
+            throw new RuntimeException(e);
+        } finally {
+            JdbcUtils.release(rs, stmt, conn);
+        }
+
+    }
+
+
+
+    public List<Sku> findSkuBySkuNumAndKey(String keyName, String skuNum) {
+        KeywordDao keywordDao = new KeywordDao();
+        Keyword keywordByName = keywordDao.findKeywordByName(keyName);
+
+        if(keywordByName == null)  {
+            return null;
+        }
+
+        logger.info("===开始查询sku，" + "keyName==" + keyName + "---skuNum==" + skuNum);
+
+        Connection conn = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+
+        List<Sku> skus = new ArrayList<Sku>();
+        try {
+            conn = JdbcUtils.getConnection();
+            stmt = conn.createStatement();
+
+
+            String sql = "select id, skuNum, keyId, location, createTime from skus where skuNum = '" + skuNum + "' and keyId = '" + keywordByName.getId() + "' order by createTime desc";
+            rs = stmt.executeQuery(sql);
+            if (rs.next()) {
+                Sku sku = new Sku();
+                sku.setId(rs.getInt(1));
+                sku.setSkuNum(rs.getString(2));
+                sku.setKeyId(rs.getInt(3));
+                sku.setLocation(rs.getInt(4));
+                sku.setCreateTime(new Date(rs.getTimestamp(5).getTime()));
+                skus.add(sku);
+            }
+            logger.info("===查询完成，sku.size===" + skus.size());
+            return skus;
+        } catch (Exception e) {
+            logger.info("===查询sku出现异常");
+            logger.info(e.getMessage());
+            return null;
+        } finally {
+            JdbcUtils.release(rs, stmt, conn);
+        }
+    }
+
+
+    public void deleteAllSku() {
+        Connection conn = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+        try {
+            conn = JdbcUtils.getConnection();
+            stmt = conn.createStatement();
+            String sql = "delete from skus";
+            stmt.execute(sql);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            JdbcUtils.release(rs, stmt, conn);
+        }
+
+    }
+
+
+    @Test
+    public static void main(String[] args) throws SQLException {
+
+        Connection connection = JdbcUtils.getConnection();
+        System.err.println(connection);
+    }
+
+    public void deleteSkuByKid(int keyId) {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        try {
+            conn = JdbcUtils.getConnection();
+            String sql = "delete from skus where keyId = ?";
+            stmt = conn.prepareStatement(sql, ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
+
+            stmt.setInt(1, keyId);
+
+            stmt.execute();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            JdbcUtils.release(rs, stmt, conn);
+        }
+    }
+}
+
+
+
+/*
+public class SkuDao {
+    */
+/**
+ * add keywords
+ * 增加关键词
+ *//*
+
+    public Map addKeyWords(JdbcUtil _jdbcUtil, String _keywords) {
+        Map map = new HashMap();
+        String str = "添加关键词失败!";
+        String sql = "insert into (keywords) keysku values (_keywords)";
+        _jdbcUtil.updateByPrearedStatement(sql, null);
+        str = "添加关键词成功！";
+        map.put("msg", str);
+        return map;
+    }
+
+    */
+/**
+ * add skulocation
+ * 添加SKU及其位置
+ *//*
+
+    public Map addSkuLocation(JdbcUtil _jdbcUtil, List _list) {
+        Map map = new HashMap();
+        String str = "添加SKU失败!";
+        for (int i = 0; i < _list.size(); i++) {
+            SkuKeyLines skukeylines = (SkuKeyLines) _list.get(i);
+            String sql = "insert into (keyid,sku,skulocation) skulocation values (" + skukeylines.getKeyid() + ",skukeylines.getSku(),skukeylines.getSkulocation())";
+
+            _jdbcUtil.updateByPrearedStatement(sql, null);
+        }
+        str = "添加SKU成功！";
+        map.put("msg", str);
+        return map;
+    }
+
+    */
+/**
+ * delete keywords  by keyid
+ * 根据关键词的keyid删除关键词
+ * 删除关键词
+ *//*
+
+    public Map deleteKeyWords(JdbcUtil _jdbcUtil, Keyword _skykey) {
+        Map map = new HashMap();
+        String str = "删除关键词失败!";
+        String sql = "delete from keysku k where k.keyid=" + _skykey.getKeyid();
+        _jdbcUtil.updateByPrearedStatement(sql, null);
+        str = "删除关键词成功！";
+        map.put("msg", str);
+        return map;
+    }
+
+    */
+/**
+ * delete sku  by keyid
+ * 删除sky 根据外键keyid
+ * 删除子表sku
+ *//*
+
+    public Map deleteSku(JdbcUtil _jdbcUtil, SkuKeyLines _skykeylines) {
+        Map map = new HashMap();
+        String str = "删除SKU失败!";
+        String sql = "delete from skulocation s where s.keyid=" + _skykeylines.getKeyid();
+        _jdbcUtil.updateByPrearedStatement(sql, null);
+        str = "删除SKU成功！";
+        map.put("msg", str);
+        return map;
+    }
+
+    */
+/**
+ * clear sku table
+ * 删除sku表中的所有数据
+ * 清空sku表
+ *//*
+
+    public Map deleteAllSku(JdbcUtil _jdbcUtil) {
+        Map map = new HashMap();
+        String str = "清空SKU失败!";
+        String sql = "delete from skulocation";
+        _jdbcUtil.updateByPrearedStatement(sql, null);
+        str = "清空SKU成功！";
+        map.put("msg", str);
+        return map;
+    }
+
+    */
+/**
+ * clear key table
+ * 删除关键词表
+ * 清空关键词表
+ *//*
+
+    public Map deleteAllKey(JdbcUtil _jdbcUtil) {
+        Map map = new HashMap();
+        String str = "清空关键词失败!";
+        String sql = "delete from keysku";
+        _jdbcUtil.updateByPrearedStatement(sql, null);
+        str = "清空关键词成功！";
+        map.put("msg", str);
+        return map;
+    }
+
+    */
+/**
+ * query keyid by keywords
+ * 查询关键词keyid
+ * 根据输入的关键词查询关键词的keyid
+ *
+ * @param _jdbcUtil
+ * @param _keywords
+ * @return
+ *//*
+
+    public long queryKeyid(JdbcUtil _jdbcUtil, String _keywords) {
+        long keyid = 0;
+        String sql = "select k.keyid from keysku k where k.keywords=? ";
+        Connection conn = _jdbcUtil.getConnection();
+        PreparedStatement pstm = null;
+        ResultSet rs = null;
+        try {
+            pstm = conn.prepareStatement(sql);
+            pstm.setString(1, _keywords);
+            rs = pstm.executeQuery();
+            while (rs.next()) {
+                keyid = rs.getLong(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
+
+        return keyid;
+    }
+
+    */
+/**
+ * query sky and location by keyid
+ * 查询sku的位置
+ * 根据keyid查询所有的sku及其位置
+ *//*
+
+    public List<Map<String, Integer>> querySkuLocation(JdbcUtil _jdbcUtil, Long _keyid) {
+        String sql = "select s.sku,s.skulocation from skulocation s where s.keyid=?";
+        Connection conn = _jdbcUtil.getConnection();
+        PreparedStatement pstm = null;
+        ResultSet rs = null;
+        Map map = null;
+        PreparedStatement pst = null;
+        List<Map<String, Integer>> list = null;
+        String str = null;
+        int location = 0;
+        try {
+            pstm = conn.prepareStatement(sql);
+            pstm.setLong(1, _keyid);
+            rs = pstm.executeQuery();
+            while (rs.next()) {
+                map = new HashMap();
+                str = rs.getString(1);
+                location = rs.getInt(2);
+                map.put(str, location);
+                list.add(map);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
+        return list;
+    }
+
+}
+*/

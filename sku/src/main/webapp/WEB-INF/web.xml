@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<!--
+  - This is the Cocoon web-app configurations file
+  -
+  - $Id$
+  -->
+<web-app version="2.4"
+         xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+    <!-- Servlet Filters ================================================ -->
+    <!-- 配置登陆过滤器 -->
+	<filter>
+		<filter-name>login</filter-name>
+		<filter-class>com.jingpaidang.toolSystem.filter.LoginFilter</filter-class>
+	</filter>
+	 
+	<filter-mapping>
+		<filter-name>login</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+    <display-name>skuSearch</display-name>
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.htm</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>default.html</welcome-file>
+        <welcome-file>default.htm</welcome-file>
+        <welcome-file>default.jsp</welcome-file>
+    </welcome-file-list>
+
+    <servlet>
+        <servlet-name>getSku</servlet-name>
+        <servlet-class>com.jingpaidang.toolSystem.servlet.SkuServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>sku</servlet-name>
+        <servlet-class>com.jingpaidang.toolSystem.servlet.SkuSearchServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>getBrand</servlet-name>
+        <servlet-class>com.jingpaidang.toolSystem.servlet.BrandServlet</servlet-class>
+    </servlet>
+    <servlet>
+    	<servlet-name>login</servlet-name>
+    	<servlet-class>com.jingpaidang.toolSystem.servlet.LoginServlet</servlet-class>
+    </servlet>
+	<servlet>
+		<servlet-name>isUserEmailExist</servlet-name>
+		<servlet-class>com.jingpaidang.toolSystem.servlet.IsUserEmailExistServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>register</servlet-name>
+		<servlet-class>com.jingpaidang.toolSystem.servlet.RegisterServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>loginout</servlet-name>
+		<servlet-class>com.jingpaidang.toolSystem.servlet.LoginOutServlet</servlet-class>
+	</servlet><servlet>
+		<servlet-name>addSku</servlet-name>
+		<servlet-class>com.jingpaidang.toolSystem.servlet.SkuAddServlet</servlet-class>
+	</servlet>
+
+    <servlet-mapping>
+        <servlet-name>addSku</servlet-name>
+        <url-pattern>/addSku</url-pattern>
+    </servlet-mapping>  <servlet-mapping>
+        <servlet-name>getBrand</servlet-name>
+        <url-pattern>/brand</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>sku</servlet-name>
+        <url-pattern>/sku1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>getSku</servlet-name>
+        <url-pattern>/sku</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>login</servlet-name>
+    	<url-pattern>/login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>isUserEmailExist</servlet-name>
+    	<url-pattern>/isUserEmailExist</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>register</servlet-name>
+    	<url-pattern>/register</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>loginout</servlet-name>
+    	<url-pattern>/loginout</url-pattern>
+    </servlet-mapping>
+
+    <listener>
+        <listener-class>
+            com.jingpaidang.toolSystem.listener.SaveSKuListener
+        </listener-class>
+    </listener>
+
+</web-app>
+        

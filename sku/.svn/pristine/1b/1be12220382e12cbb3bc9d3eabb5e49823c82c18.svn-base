@@ -1,0 +1,102 @@
+	body{
+		margin:0;
+		padding:0;
+		font: 12px / 1.5 '宋体', tahoma, Srial, helvetica, sans-serif;
+	}
+	div{
+		display:block;
+	}
+	#site-nav{
+		background: none repeat scroll 0 0 #333333;
+    	height: 40px;
+    	min-width: 990px;
+    	width: auto;
+	}
+	#header{
+		background-color:#333333;
+		border-left:1px #eeeeee solid;
+		border-right:1px #eeeeee solid;
+		line-height:40px;
+		margin: 0 auto;
+		width:988px;
+   		position: relative;
+    	z-index: 10000;
+	}
+	.nav-title{
+		border: 0 none;
+    	color: #ffffff;
+    	float: left;
+    	font-size: 100%;
+    	margin: 0;
+    	padding: 0;
+    	vertical-align: baseline;
+	}
+	.nav-login{
+		float:right;
+		color:#ffffff;
+		vertical-align: baseline;
+		margin: 0;
+    	padding: 0;
+    	font-size: 100%;
+	}
+	.nav-login a{
+		color:#ffffff;
+		text-decoration: none;
+	}
+	.nav-login a:hover{
+		color:#ffffff;
+		text-decoration: underline;
+	}
+	#content{
+		margin: 40px auto 0px;
+    	width: 990px;
+	}
+	.logo{
+		margin:auto 295px;
+		width:400px;
+	}
+	.logo p{
+		float:left;
+	}
+	.form-content{
+		margin:auto 295px;
+		width:400px;
+	}
+	.start{
+		color:#FF0000;
+		height:30px;
+		line-height:30px;
+		vertical-align:middle;
+	}
+	.input-text{
+		height:30px;
+		padding:0px;
+		line-height:30px;
+	}
+	.w300{
+		width:300px;
+	}
+	.line{
+		border-bottom:1px #e3e3e3 solid;
+		width:300px;
+	}
+	#footer{
+		text-align:center;
+		color:#666666;
+	}
+    .button{
+        margin-left: 20px;
+        background-image: url("../images/s-btn.jpg");
+        width: 160px;
+        height: 34px;
+        cursor:pointer;
+    }
+    .errorMsg{
+        font-size: 12px;
+        font-style: italic;
+        color: red;
+    }
+    label.msg{
+        font-size: 12px;
+        font-family: "宋体";
+    }

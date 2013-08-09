@@ -1,0 +1,31 @@
+package com.jingpaidang.crm.service.merchant;
+
+import com.jingpaidang.crm.dao.merchant.MerchantMapper;
+import com.jingpaidang.crm.domain.merchant.Merchant;
+import com.jingpaidang.crm.rpc.jos.JdService;
+import org.springframework.stereotype.Service;
+
+@Service
+public class MerchantService {
+		
+		private MerchantMapper merchantMapper;
+		
+		public void insertMerchant(Merchant merchant)
+		{
+			// 判断是否已经存在
+			merchantMapper.insertMerchant(merchant);
+		}
+
+    /**
+     * 通过accessToken查找到refreshToken
+     * @param access
+     * @return
+     */
+        public String findRefreshByAccess(String access) {
+            //TODO
+
+            new JdService();
+            return null;
+        }
+		
+}

@@ -1,0 +1,52 @@
+package com.jingpaidang.cshop.rpc.jd.proxy;
+
+import com.jd.open.api.sdk.response.AbstractResponse;
+import com.jingpaidang.cshop.rpc.jd.JdService;
+import net.sf.cglib.proxy.Enhancer;
+import net.sf.cglib.proxy.MethodInterceptor;
+import net.sf.cglib.proxy.MethodProxy;
+import org.springframework.stereotype.Service;
+
+import java.lang.reflect.Method;
+
+/**
+ * Created with IntelliJ IDEA.
+ * User: JackChan
+ * Date: 7/31/13
+ * Time: 2:10 PM
+ */
+
+@Service("jdServiceProxy")
+public class JdServiceProxy implements MethodInterceptor {
+    Enhancer enhancer = new Enhancer();
+    /**
+     * 创建代理对象
+     *
+     * @param
+     * @return
+     */
+    public JdService getInstance() {
+        enhancer.setSuperclass(JdService.class);
+        // 回调方法
+        enhancer.setCallback(this);
+        // 创建代理对象
+        return (JdService)enhancer.create();
+    }
+
+
+    @Override
+    public Object intercept(Object obj, Method method, Object[] objects, MethodProxy proxy) throws Throwable {
+        String superName = proxy.getSuperName();
+
+        AbstractResponse o = (AbstractResponse) proxy.invokeSuper(obj, objects);
+
+        System.err.println(superName);
+
+        if("0".equals(o.getCode())) {
+
+        }
+
+        System.out.println("事物结束");
+        return o;
+    }
+}

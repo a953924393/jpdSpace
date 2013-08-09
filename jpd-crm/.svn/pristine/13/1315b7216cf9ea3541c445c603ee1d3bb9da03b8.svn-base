@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2011-2012 the original author or authors.
+  ~
+  ~  http://www.jingpaidang.com
+  -->
+
+<!DOCTYPE mapper
+        PUBLIC "-//ibatis.apache.org//DTD Config 3.1//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        <mapper namespace="com.jingpaidang.crm.dao.member.MemberMapper">
+    <!-- 向jpd_crm_db表中添加会员 -->
+    <insert id="insert" parameterType="Member" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO crm_member
+         (
+         jd_id,
+         member_level,
+         integral,
+         member_birthday,
+         member_name,
+         member_address,
+         member_telephone,
+         member_email,
+         last_consum_time,
+         created,
+         modified,
+         operator,
+         jd_name
+         )
+         VALUES
+         (
+         #{memberJdId},
+         #{memberLevel},
+         #{memberIntegral},
+         #{memberBirthday},
+         #{memberName},
+         #{memberAddress},
+         #{memberTelephone},
+         #{memberEmail},
+         #{memberLastConsumTime},
+         #{memberCreated},
+         #{memberModified},
+         #{memberOperator},
+         #{memberJdName}
+         )
+    </insert>
+    <select id="getMemberByMemberJdId" parameterType="String" resultType="Member">
+    	SELECT 
+    		id AS id,
+    		jd_id AS memberJdId,
+	        member_level AS memberLevel,
+	        integral AS memberIntegral,
+	        member_birthday AS memberBirthday,
+	        member_name AS memberName,
+	        member_address AS memberAddress,
+	        member_telephone AS memberTelephone,
+	        member_email AS memberEmail,
+	        last_consum_time AS memberLastConsumTime,
+	        created AS memberCreated,
+	        modified AS memberModified,
+	        operator AS memberOperator,
+	        jd_name  AS memberJdName
+    	FROM 
+    		crm_member 
+    	WHERE 
+    		jd_id = #{jdId} 
+    	ORDER BY 
+    		id DESC
+    </select>
+    <update id="updateLastConsumTime" parameterType="Member">
+    	UPDATE 
+    		crm_member 
+    	SET 
+    		last_consum_time = #{memberLastConsumTime}
+    	WHERE 
+    		jd_id = #{memberJdId}
+    </update>
+</mapper>

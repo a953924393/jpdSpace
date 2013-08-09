@@ -1,0 +1,7 @@
+
+jd.redirect.uri=http://crm.jingpaidang.com:8080/oauth/accessToken
+jd.app.key=6F293B379C912C0E94BD9789A51ADC46
+jd.app.secret=jd.app.secret=f888a1ff4e2a4ba0a0b2e1055a741ea6
+jd.url=http://gw.api.360buy.com/routerjson
+jd.authurl=http://auth.360buy.com/oauth/token
+

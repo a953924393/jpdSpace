@@ -1,0 +1,114 @@
+.move{
+	margin-top:10px;
+	border-bottom:1px #CDD5D8 solid;
+	border-left:1px #CDD5D8 solid;
+	border-right:1px #CDD5D8 solid;
+}
+.move_step{
+	height:59px;
+	line-height:59px;
+	text-align:center;
+	vertical-align:middle;
+	margin-bottom:20px;
+}
+.move_step li{
+	display:inline;
+	text-align:center;
+	margin-left:-4px;
+}
+.move_des{
+	background:url(../images/move_r2_c3.jpg);
+	height:37px;
+	font-family:"宋体";
+	font-size:15px;
+	font-weight:bold;
+	color:#666666;
+	vertical-align:middle;
+	padding-left:25px;
+}
+.move_c_l{
+	height:30px;
+	padding-TOP:20px;
+	text-align:right;
+	vertical-align:top;
+}
+.move_c_r{
+	text-align:left;
+	padding-top:10px;
+	vertical-align:top;
+	vertical-align:middle;
+}
+.move_c_r select{
+	width:415px;
+	height:30px;
+	text-align:left;
+	vertical-align:middle;
+	padding:5px 6px 4px 6px;
+}
+.move_c_r input[type=text]{
+	width:415px;
+	height:30px;
+	line-height:30px;
+	text-align:left;
+	vertical-align:middle;
+	padding-left:5px;
+}
+.move_c_r p{
+	font-family:"宋体";
+	color:#666666;
+	margin:5px 0;
+}
+.move_bottom{
+	margin:20px 0 20px 20px;
+	height:34px;
+	line-height:34px;
+}
+.move_bottom p{
+	float:left;
+	height:34px;
+	line-height:34px;
+	vertical-align:bottom;
+	color:#666666;
+}
+#ware-item-list th{
+	height:40px;
+	line-height:40px;
+	border-top:1px #CDD5D8 solid;
+	border-bottom:1px #CDD5D8 solid;
+	border-right:1px #CDD5D8 solid;
+	background:url(../images/th_bg.jpg);
+}
+#ware-item-list td{
+	font-family:"宋体";
+	font-size:13px;
+	text-align:center;
+	vertical-align:middle;
+	color:#444444;
+	height:30px;
+	line-height:30px;
+	border-bottom:1px #CDD5D8 solid;
+	border-right:1px #CDD5D8 solid;
+}
+.target th{
+	height:37px;
+	line-height:37px;
+	border-top:1px #CDD5D8 solid;
+	border-bottom:1px #CDD5D8 solid;
+	border-right:1px #CDD5D8 solid;
+	background:url(../images/move_r2_c3.jpg);
+}
+.target td{
+	vertical-align:top;
+	height:30px;
+	line-height:30px;
+	border-bottom:1px #CDD5D8 solid;
+	border-right:1px #CDD5D8 solid;
+	padding-left:5px;
+}
+.target select{
+	width:180px;
+	height:25px;
+	text-align:left;
+	vertical-align:middle;
+	padding:5px 6px 4px 6px;
+}

@@ -1,0 +1,162 @@
+package com.jingpaidang.cshop.action.history;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import javax.annotation.Resource;
+
+import org.apache.struts2.convention.annotation.ParentPackage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.jd.open.api.sdk.request.ware.WareAddRequest;
+import com.jd.open.api.sdk.response.ware.WareAddResponse;
+import com.jingpaidang.cshop.action.admin.BaseAction;
+import com.jingpaidang.cshop.domain.move.MoveHistory;
+import com.jingpaidang.cshop.domain.user.User;
+import com.jingpaidang.cshop.service.move.MoveHistoryService;
+
+@ParentPackage("history")
+public class HistoryAction extends BaseAction {
+	
+	private static final long serialVersionUID = 1L;
+    private static final Logger logger = LoggerFactory.getLogger(HistoryAction.class);
+
+    public static final String MOVEHISTORY_LIST = "move_history_list" ;
+    
+    @Resource
+    private MoveHistoryService moveHistoryService ;
+    
+    private List<MoveHistory> moveHistoryList ;
+    
+    /**
+     * 网店ID
+     */
+    private Integer accountId;
+    /**
+     * 商品状态
+     */
+    private Integer status;
+    /**
+     * 商品名称
+     */
+    private String itemName ;
+    /**
+     * 商品ID
+     */
+    private Long itemId ;
+    /**
+     * 商品ID串 333223,4243344,443344
+     */
+    private String historyIds ;
+    
+    public String deleteHistory(){
+    	Map<String,Object> paras = new HashMap<String,Object>();
+    	Integer uid = ((User) this.getSession("user")).getId();
+    	paras.put("userId", uid);
+    	paras.put("ids", historyIds.split(","));
+    	moveHistoryService.deleteHistory(paras);
+    	return null ;
+    }
+    /**
+     * 
+     * @Title:removeItems 
+     * @Description:TODO(重新搬家) 
+     * @param:@return 
+     * @return:String 
+     * @throws 
+     * @Create: 2013-7-24 下午4:51:55
+     * @Author : Alex
+     */
+   public String removeItems(){
+	   int fail = 0;
+	   int success = 0 ;
+	   try {
+		Map<WareAddRequest,WareAddResponse> responseMap = moveHistoryService.reMoveTb2Jd(historyIds) ;
+		Set<Map.Entry<WareAddRequest, WareAddResponse>> set = responseMap.entrySet();
+        for (Iterator<Map.Entry<WareAddRequest, WareAddResponse>> it = set.iterator(); it.hasNext();) {
+            Map.Entry<WareAddRequest, WareAddResponse> entry = (Map.Entry<WareAddRequest, WareAddResponse>) it.next();
+            if("0".equals(entry.getValue().getCode())){
+            	success+=1;
+            }else{
+            	fail+=1;
+            }
+        }
+	} catch (Exception e) {
+		return this.ajax("请重新获取授权！") ;
+	}
+	   return this.ajax("上传成功"+success+"条；失败"+fail+"条！") ;
+   }
+    /**
+     * 
+     * @Title:getMoveHistory 
+     * @Description:TODO(搬家历史列表) 
+     * @param:@return 
+     * @return:String 
+     * @throws 
+     * @Create: 2013-7-23 下午1:46:51
+     * @Author : Alex
+     */
+    public String moveHistoryList(){
+    	Integer uid = ((User) this.getSession("user")).getId();
+    	Map<String,Object> paras = new HashMap<String,Object>();
+    	
+    	paras.put("userId", uid) ;
+    	paras.put("accountId", accountId);
+    	paras.put("status", ""+status);
+    	paras.put("itemId", itemId);
+    	paras.put("itemName", itemName);
+    	moveHistoryList = moveHistoryService.getMoveHistoryList(paras);
+    	return MOVEHISTORY_LIST;
+    }
+
+	public void setMoveHistoryList(List<MoveHistory> moveHistoryList) {
+		this.moveHistoryList = moveHistoryList;
+	}
+    public List<MoveHistory> getMoveHistoryList(){
+    	return this.moveHistoryList;
+    }
+
+	public Integer getAccountId() {
+		return accountId;
+	}
+
+	public void setAccountId(Integer accountId) {
+		this.accountId = accountId;
+	}
+
+	public Integer getStatus() {
+		return status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
+
+	public String getItemName() {
+		return itemName;
+	}
+
+	public void setItemName(String itemName) {
+		this.itemName = itemName;
+	}
+
+	public Long getItemId() {
+		return itemId;
+	}
+
+	public void setItemId(Long itemId) {
+		this.itemId = itemId;
+	}
+	public String getHistoryIds() {
+		return historyIds;
+	}
+	public void setHistoryIds(String historyIds) {
+		this.historyIds = historyIds;
+	}
+
+    
+}

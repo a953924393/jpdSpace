@@ -1,0 +1,29 @@
+.search{
+	padding-bottom:10px;
+}
+.search ul{
+	padding-top:10px;
+}
+.search li{
+	height:30px;
+	line-height:30px;
+	float:left;
+	width:480px;
+	padding-left:10px;
+	margin-bottom:10px;
+}
+.search input[type=text],select{
+	height:25px;
+	line-height:25px;
+	vertical-align:middle;
+	width:400px;
+}
+.search p{
+	text-align:center;
+}
+.list-bottom p{
+	height:30px;
+	line-height:30px;
+	vertical-align:middle;
+	float:left;
+}

@@ -1,0 +1,1549 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" readonly="true" id="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cshop-rpc/src/main/java/com/jingpaidang/cshop/rpc/jd/TokenService.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cshop-rpc/src/main/java/com/jingpaidang/cshop/rpc/jd/JdServiceAspect.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cshop-rpc/src/main/java/com/jingpaidang/cshop/rpc/jd/proxy/JdServiceProxy.java" afterPath="$PROJECT_DIR$/cshop-rpc/src/main/java/com/jingpaidang/cshop/rpc/jd/proxy/JdServiceProxy.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cshop-common/src/main/java/com/jingpaidang/cshop/common/utils/StringUtil.java" afterPath="$PROJECT_DIR$/cshop-common/src/main/java/com/jingpaidang/cshop/common/utils/StringUtil.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cshop-web/src/main/java/com/jingpaidang/cshop/action/user/UserAction.java" afterPath="$PROJECT_DIR$/cshop-web/src/main/java/com/jingpaidang/cshop/action/user/UserAction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cshop-service/src/main/java/com/jingpaidang/cshop/service/UserService.java" afterPath="$PROJECT_DIR$/cshop-service/src/main/java/com/jingpaidang/cshop/service/UserService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cshop-web/src/main/resources/constant.properties" afterPath="$PROJECT_DIR$/cshop-web/src/main/resources/constant.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cshop-web/src/main/webapp/env.jsp" afterPath="$PROJECT_DIR$/cshop-web/src/main/webapp/env.jsp" />
+    </list>
+    <list id="21153852-06d7-45c5-92aa-f1505479384c" name="LoginFilter" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cshop-rpc/pom.xml" afterPath="$PROJECT_DIR$/cshop-rpc/pom.xml" />
+    </list>
+    <ignored path="cshop.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <file path="/style.css" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374556785215" ignored="false" />
+    <file path="/LoginInterceptor.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376039863224" ignored="false" />
+    <file path="/User.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374560639194" ignored="false" />
+    <file path="/loginFilter.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374630861128" ignored="false" />
+    <file path="/web.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376040881546" ignored="false" />
+    <file path="/a.dummy" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376041682685" ignored="false" />
+    <file path="/common_navbar.ftl" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374566998069" ignored="false" />
+    <file path="/Dummy.txt" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376031580426" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xhtml1-frameset.xsd" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374569988815" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/html_basic.taglib.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374569988815" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/catalog.xsd" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374569988815" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/html5/xhtml5.xsd" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374569988815" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/jsf_core.tld" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374569988815" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/jstl-core.taglib.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374569988815" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/html_basic.tld" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374569988816" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xslt-1_0.xsd" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374569988816" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/xml.xsd" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374569988816" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/html_basic_2_0.tld" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374569988816" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/relaxng.rng" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374569988816" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/XMLSchema.xsd" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374569988816" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/jsf-ui.tld" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374569988816" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/XMLSchema-instance.xsd" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374569988816" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/composite.tld" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374569988816" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/ui.taglib.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374569988816" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xhtml1-transitional.xsd" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374569988816" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/jstl-fn.taglib.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374569988816" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xml.xsd" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374569988816" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/composite.taglib.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374569988816" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/jsf-ui-2_0.tld" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374569988816" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xslt-2_0.xsd" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374569988816" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/javaee_5.xsd" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374569988816" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xinclude.xsd" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374569988816" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/jsf_core_2_0.tld" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374569988816" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/jstl.fn.facelets.tld" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374569988816" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xhtml1-strict.xsd" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374569988816" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpdTools/jpdtool_rpc/src/main/java/com/jingpaidang/tool/rpc/JdRpcService.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374824952459" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpdTools/jpdtool_rpc/src/main/java/com/jingpaidang/tool/rpc/com/jingpaidang/tool/rpc/TbRpcService.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374818575016" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpdTools/jpdtool_rpc/src/main/java/com/jingpaidang/tool/rpc/com/jingpaidang/tool/rpc/JdRpcService.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374818557964" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpdTools/jpdtool_rpc/pom.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374820418026" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpdTools/pom.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374820089002" ignored="false" />
+    <file path="/JdRpcService.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375423071779" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpdTools/jpdtool_rpc/jpdtool_rpc.iml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374821530640" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpdTools/jpdtool_common/src/main/java/com/jingpaidang/tool/common/utils/StringUtil.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374820196090" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpdTools/jpdtool_common/src/main/java/com/jingpaidang/tool/common/utils/ValidateUtil.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374820196090" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpdTools/jpdtool_common/src/main/java/com/jingpaidang/tool/common/utils/CommonUtil.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374820203423" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpdTools/jpdtool_common/src/main/java/com/jingpaidang/tool/common/utils/SpringUtil.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374820196090" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpdTools/jpdtool_common/src/main/java/com/jingpaidang/tool/common/utils/ImageUtil.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374820196090" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpdTools/jpdtool_common/src/main/java/com/jingpaidang/tool/common/utils/DateUtil.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374820196090" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpdTools/jpdtool_common/src/main/java/com/jingpaidang/tool/common/utils/JSONUtils.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374820203423" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpdTools/jpdtool_common/src/main/java/com/jingpaidang/tool/common/utils/utils/StringUtil.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374820232601" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpdTools/jpdtool_common/src/main/java/com/jingpaidang/tool/common/utils/utils/DateUtil.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374820232601" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpdTools/jpdtool_common/src/main/java/com/jingpaidang/tool/common/utils/utils/ValidateUtil.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374820232601" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpdTools/jpdtool_common/src/main/java/com/jingpaidang/tool/common/utils/utils/SpringUtil.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374820232601" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpdTools/jpdtool_common/src/main/java/com/jingpaidang/tool/common/utils/utils/ImageUtil.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374820232601" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpdTools/jpdtool_common/src/main/java/com/jingpaidang/tool/common/utils/utils/CommonUtil.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374820233138" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpdTools/jpdtool_common/src/main/java/com/jingpaidang/tool/common/utils/utils/JSONUtils.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374820233138" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpdTools/jpdtool_common/pom.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374820368356" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpdTools/jpdtool_web/jpdtool_web.iml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374821530640" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpdTools/jpdtool_web/src/main/resources/spring3-applicationContext.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1374823523015" ignored="false" />
+    <file path="/spring3-applicationContext.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376039576811" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-Tools/jpd-web/pom.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375078841342" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-Tools/pom.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375078553332" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-Tools/jpd-web/src/main/webapp/WEB-INF/web.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375064744487" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-Tools/jpd-web/src/main/webapp/index.jsp" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375064744487" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-Tools/spring/pom.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375066783873" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-Tools/jpd-Tools.iml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375065119738" ignored="false" />
+    <file path="/*.regexp" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375066656264" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-Tools/spring/src/main/java/jpd-Tools/impl/BeanImpl.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375066443457" ignored="false" />
+    <file path="/fragment.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376039088872" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-Tools/spring/src/main/resources/META-INF/spring/bundle-context.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375066643481" ignored="false" />
+    <file path="/constant.properties" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375234987750" ignored="false" />
+    <file path="/pom.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376036100237" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-Tools/jpd-batchUpdate-service/pom.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375069406411" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-Tools/tools-batchUpdate-service/pom.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375069610601" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-Tools/jpd-web/src/main/resources/spring3-applicationContext.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375075700122" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-Tools/batchService/pom.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375076091612" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-Tools/batchDao/pom.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375078553331" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-Tools/batchService/batchService.iml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375078728233" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-tools/batch-service/pom.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375092519498" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-tools/.idea/modules.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375092394690" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-tools/.idea/workspace.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375440564865" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-tools/.idea/misc.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375088378546" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-tools/batch-dao/pom.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375088305012" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-tools/pom.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375422844993" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-tools/.idea/compiler.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375092394690" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-tools/.idea/encodings.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375092394690" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-tools/tools-web/pom.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375166088333" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-tools/tools-web/src/main/resources/jdbc.properties" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375091805760" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-tools/tools-web/src/main/resources/spring3-applicationContext.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375423190039" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-tools/batch-domain/pom.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375092396347" ignored="false" />
+    <file path="/spring-config-dao.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375093703162" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-tools/tools-web/src/main/java/com/jingpaidang/tools/batch/controller/user/UserController.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375177101457" ignored="false" />
+    <file path="/UserController.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376040558012" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-tools/tools-common/src/main/java/com/jingpaidang/tools/common/plugins/Pagination.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375169887409" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-tools/tools-common/src/main/java/com/jingpaidang/tools/common/constant/BasicConstant.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375169887409" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-tools/tools-common/src/main/java/com/jingpaidang/tools/common/utils/ImageUtil.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375169887410" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-tools/tools-common/src/main/java/com/jingpaidang/tools/common/utils/ValidateUtil.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375169887410" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-tools/tools-common/src/main/java/com/jingpaidang/tools/common/utils/SpringUtil.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375169887410" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-tools/tools-common/src/main/java/com/jingpaidang/tools/common/utils/DateUtil.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375169887410" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-tools/tools-common/src/main/java/com/jingpaidang/tools/common/utils/StringUtil.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375169958429" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-tools/tools-common/src/main/java/com/jingpaidang/tools/common/utils/JSONUtils.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375169887981" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-tools/tools-common/src/main/java/com/jingpaidang/tools/common/utils/CommonUtil.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375170003542" ignored="false" />
+    <file path="/StringUtil.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375325673188" ignored="false" />
+    <file path="/CommonUtil.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375750715894" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-tools/tools-common/pom.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375409160593" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-tools/tools-web/src/main/java/com/jingpaidang/tools/controller/BaseController.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375172682703" ignored="false" />
+    <file path="/BaseController.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375172176139" ignored="false" />
+    <file path="/TbService.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375263540897" ignored="false" />
+    <file path="/ConvertAction.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375241492605" ignored="false" />
+    <file path="/oauth.ftl" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375238210377" ignored="false" />
+    <file path="/redirectOauth.jsp" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375238348180" ignored="false" />
+    <file path="/redirectOauth.ftl" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375239180555" ignored="false" />
+    <file path="/BaseAction.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375238885917" ignored="false" />
+    <file path="/UserAction.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375345463772" ignored="false" />
+    <file path="/move_target_shop_list.ftl" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375240333811" ignored="false" />
+    <file path="/jdOauth.ftl" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375241300030" ignored="false" />
+    <file path="/oauth.jsp" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375241325456" ignored="false" />
+    <file path="/JdService.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375409688845" ignored="false" />
+    <file path="/JdServiceProxy.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375843556239" ignored="false" />
+    <file path="/ExampleService.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375851018431" ignored="false" />
+    <file path="/ExampleAction.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375252381461" ignored="false" />
+    <file path="/JdServiceAspect.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375255759669" ignored="false" />
+    <file path="/spring-config.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375255947632" ignored="false" />
+    <file path="/server.jsp" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375257253906" ignored="false" />
+    <file path="/move_src_item_list.ftl" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375267490112" ignored="false" />
+    <file path="$USER_HOME$/sku/pom.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375266377234" ignored="false" />
+    <file path="$USER_HOME$/sku/src/main/webapp/WEB-INF/web.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375339441314" ignored="false" />
+    <file path="$USER_HOME$/sku/src/main/java/com/jingpaidang/toolSystem/dao/KeywordDao.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375339441314" ignored="false" />
+    <file path="$USER_HOME$/sku/src/main/webapp/js/login.js" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375344167729" ignored="false" />
+    <file path="/login.js" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375259351460" ignored="false" />
+    <file path="/WaresAction.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375261786628" ignored="false" />
+    <file path="/move.js" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375268503575" ignored="false" />
+    <file path="/MoveAction.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375265176301" ignored="false" />
+    <file path="/moveTarget.js" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375265593774" ignored="false" />
+    <file path="/UserService.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375322675639" ignored="false" />
+    <file path="$PROJECT_DIR$/cshop-rpc/pom.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375781021752" ignored="false" />
+    <file path="$PROJECT_DIR$/cshop-web/src/main/webapp/jsp/loginUI.jsp" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375322812906" ignored="false" />
+    <file path="$PROJECT_DIR$/cshop-domain/pom.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375322812904" ignored="false" />
+    <file path="$PROJECT_DIR$/cshop-domain/src/main/java/com/jingpaidang/cshop/domain/user/Account.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375322812202" ignored="false" />
+    <file path="$PROJECT_DIR$/cshop-domain/src/main/java/com/jingpaidang/cshop/domain/user/User.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375322812202" ignored="false" />
+    <file path="$PROJECT_DIR$/cshop-domain/src/main/java/com/jingpaidang/cshop/domain/ware/WareItem.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375322812202" ignored="false" />
+    <file path="$PROJECT_DIR$/cshop-domain/src/main/java/com/jingpaidang/cshop/domain/category/ItemCategory.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375322812904" ignored="false" />
+    <file path="$PROJECT_DIR$/cshop-web/src/main/webapp/css/bootstrap.css" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375322812904" ignored="false" />
+    <file path="$PROJECT_DIR$/cshop-web/src/main/java/com/jingpaidang/cshop/web/FreemarkerManager.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375322812904" ignored="false" />
+    <file path="$PROJECT_DIR$/cshop-web/src/main/java/com/jingpaidang/cshop/action/history/HistoryAction.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375322812904" ignored="false" />
+    <file path="$PROJECT_DIR$/cshop-web/src/main/webapp/js/move.js" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375322812904" ignored="false" />
+    <file path="$PROJECT_DIR$/cshop-web/src/main/webapp/js/jquery-1.7.1.js" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375322812904" ignored="false" />
+    <file path="$PROJECT_DIR$/cshop-web/src/main/webapp/js/moveTarget.js" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375322812904" ignored="false" />
+    <file path="$PROJECT_DIR$/cshop-web/src/main/java/com/jingpaidang/cshop/action/move/MoveAction.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375322812904" ignored="false" />
+    <file path="$PROJECT_DIR$/cshop-web/src/main/java/com/jingpaidang/cshop/action/admin/BaseAction.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375322812905" ignored="false" />
+    <file path="$PROJECT_DIR$/cshop-web/src/main/java/com/jingpaidang/cshop/action/wares/WaresAction.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375322812905" ignored="false" />
+    <file path="$PROJECT_DIR$/cshop-web/src/main/webapp/js/script/convert.js" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375322812904" ignored="false" />
+    <file path="$PROJECT_DIR$/cshop-web/src/main/java/com/jingpaidang/cshop/action/convert/ConvertAction.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375322812905" ignored="false" />
+    <file path="$PROJECT_DIR$/cshop-web/src/main/java/com/jingpaidang/cshop/action/example/ExampleAction.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375322812904" ignored="false" />
+    <file path="$PROJECT_DIR$/cshop-web/src/main/webapp/jsp/move.jsp" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375322812906" ignored="false" />
+    <file path="$PROJECT_DIR$/cshop-domain/src/main/java/com/jingpaidang/cshop/domain/move/MoveHistory.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375322812202" ignored="false" />
+    <file path="$PROJECT_DIR$/cshop-domain/src/main/java/com/jingpaidang/cshop/domain/convert/PlatformConvertRule.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375322812202" ignored="false" />
+    <file path="$PROJECT_DIR$/cshop-domain/src/main/java/com/jingpaidang/cshop/domain/convert/ConvertRuleDetail.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375322812202" ignored="false" />
+    <file path="$PROJECT_DIR$/cshop-domain/src/main/java/com/jingpaidang/cshop/domain/example/Example.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375322812904" ignored="false" />
+    <file path="$PROJECT_DIR$/cshop-domain/src/main/java/com/jingpaidang/cshop/domain/category/CategoryPropertyValue.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375322812904" ignored="false" />
+    <file path="$PROJECT_DIR$/cshop-domain/src/main/java/com/jingpaidang/cshop/domain/category/CategoryProperty.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375322812904" ignored="false" />
+    <file path="$PROJECT_DIR$/cshop-service/src/main/java/com/jingpaidang/cshop/service/move/MoveHistoryService.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375322812904" ignored="false" />
+    <file path="$PROJECT_DIR$/cshop-service/src/main/java/com/jingpaidang/cshop/service/move/MoveService.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375322812905" ignored="false" />
+    <file path="$PROJECT_DIR$/cshop-service/src/main/java/com/jingpaidang/cshop/service/wares/WaresService.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375322812905" ignored="false" />
+    <file path="$USER_HOME$/sku/src/main/webapp/index.jsp" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375326185295" ignored="false" />
+    <file path="$USER_HOME$/sku/src/main/webapp/brand.jsp" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375326185295" ignored="false" />
+    <file path="$USER_HOME$/sku/src/main/webapp/login.jsp" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375326185295" ignored="false" />
+    <file path="$USER_HOME$/sku/src/main/webapp/register.jsp" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375326185295" ignored="false" />
+    <file path="$USER_HOME$/sku/src/main/webapp/js/reg.js" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375326185295" ignored="false" />
+    <file path="$USER_HOME$/sku/src/main/java/com/jingpaidang/toolSystem/filter/LoginFilter.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375344167729" ignored="false" />
+    <file path="$USER_HOME$/sku/src/main/resources/jdbc.properties" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375344223281" ignored="false" />
+    <file path="$USER_HOME$/sku/src/main/java/com/jingpaidang/toolSystem/service/SaveSkuTask.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375339441314" ignored="false" />
+    <file path="/jdbc.properties" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375341187046" ignored="false" />
+    <file path="$USER_HOME$/sku/src/main/java/com/jingpaidang/toolSystem/util/PropUtil.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375339441313" ignored="false" />
+    <file path="$USER_HOME$/sku/src/main/java/com/jingpaidang/toolSystem/servlet/LoginServlet.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375339441314" ignored="false" />
+    <file path="$USER_HOME$/sku/src/main/java/com/jingpaidang/toolSystem/util/JdbcUtils.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375339441314" ignored="false" />
+    <file path="$USER_HOME$/sku/src/main/java/com/jingpaidang/toolSystem/service/JingdongSku.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375339441314" ignored="false" />
+    <file path="$USER_HOME$/sku/src/main/java/com/jingpaidang/toolSystem/service/JingdongBrand.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375339441314" ignored="false" />
+    <file path="$USER_HOME$/sku/src/main/java/com/jingpaidang/toolSystem/service/JingdongSkuThread.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375339441314" ignored="false" />
+    <file path="$USER_HOME$/sku/src/main/java/com/jingpaidang/toolSystem/domain/Keyword.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375339441314" ignored="false" />
+    <file path="$USER_HOME$/sku/src/main/java/com/jingpaidang/toolSystem/listener/SaveSKuListener.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375339441314" ignored="false" />
+    <file path="$USER_HOME$/sku/src/main/java/com/jingpaidang/toolSystem/dao/SkuDao.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375339441314" ignored="false" />
+    <file path="$USER_HOME$/sku/src/main/java/com/jingpaidang/toolSystem/service/TimeManager.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375339441314" ignored="false" />
+    <file path="$USER_HOME$/sku/src/main/resources/log4j.properties" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375341035841" ignored="false" />
+    <file path="$USER_HOME$/sku/src/main/resources/keys" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375339441314" ignored="false" />
+    <file path="/log4j.properties" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375959837846" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-tools/tools-rpc/pom.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375409489425" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-tools/tools-rpc/src/main/java/com/jingpaidang/tools/rpc/JdService.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375409688845" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-tools/tools-web/src/main/resources/constant.properties" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375421963170" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-tools/batch-rpc/pom.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375422912708" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-tools/batch-rpc/src/main/java/com/jingpaidang/tools/batch/rpc/JdRpcService.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375423071779" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-tools/batch-rpc/src/main/java/com/jingpaidang/tools/batch/rpc/BatchRpcService.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375436378426" ignored="false" />
+    <file path="/BatchRpcService.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375436372878" ignored="false" />
+    <file path="$PROJECT_DIR$/../sku/src/main/java/com/jingpaidang/toolSystem/service/JingdongSku.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375441159286" ignored="false" />
+    <file path="/JingdongSku.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375441155327" ignored="false" />
+    <file path="$PROJECT_DIR$/../sku/src/main/java/com/jingpaidang/toolSystem/service/JingdongSkuThread.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375437762925" ignored="false" />
+    <file path="/JingdongSkuThread.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375431679723" ignored="false" />
+    <file path="$PROJECT_DIR$/../sku/src/main/resources/jdbc.properties" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375960072010" ignored="false" />
+    <file path="$PROJECT_DIR$/../sku/src/main/java/com/jingpaidang/toolSystem/dao/KeywordDao.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375439267707" ignored="false" />
+    <file path="/KeywordDao.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375439264477" ignored="false" />
+    <file path="$PROJECT_DIR$/../sku/src/main/java/com/jingpaidang/toolSystem/service/SaveSkuTask.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375441223729" ignored="false" />
+    <file path="/SaveSkuTask.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375439792048" ignored="false" />
+    <file path="$PROJECT_DIR$/../sku/src/main/java/com/jingpaidang/toolSystem/service/TimeManager.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375954398780" ignored="false" />
+    <file path="$PROJECT_DIR$/../sku/src/main/resources/log4j.properties" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375959839477" ignored="false" />
+    <file path="/SkuDao.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375851178909" ignored="false" />
+    <file path="$PROJECT_DIR$/../sku/src/main/java/com/jingpaidang/toolSystem/dao/SkuDao.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375851590784" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-common/src/main/java/com/jingpaidang/crm/common/util/constant/BasicConstant.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375750561736" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-common/src/main/java/com/jingpaidang/crm/common/util/utils/StringUtil.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375750552662" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-common/src/main/java/com/jingpaidang/crm/common/util/utils/DateUtil.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375750551811" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-common/src/main/java/com/jingpaidang/crm/common/util/utils/SpringUtil.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375750551812" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-common/src/main/java/com/jingpaidang/crm/common/util/utils/ValidateUtil.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375750551812" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-common/src/main/java/com/jingpaidang/crm/common/util/utils/JSONUtils.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375750552662" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-common/src/main/java/com/jingpaidang/crm/common/util/utils/ImageUtil.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375750551812" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-common/src/main/java/com/jingpaidang/crm/common/util/utils/CommonUtil.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375750552662" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-common/src/main/java/com/jingpaidang/crm/common/utils/StringUtil.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375750604694" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-common/src/main/java/com/jingpaidang/crm/common/utils/DateUtil.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375750604694" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-common/src/main/java/com/jingpaidang/crm/common/utils/SpringUtil.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375750604694" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-common/src/main/java/com/jingpaidang/crm/common/utils/ValidateUtil.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375750604694" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-common/src/main/java/com/jingpaidang/crm/common/utils/JSONUtils.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375772459333" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-common/src/main/java/com/jingpaidang/crm/common/utils/ImageUtil.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375750604694" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-common/src/main/java/com/jingpaidang/crm/common/utils/CommonUtil.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375750717943" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-dao/src/main/resources/com/jingpaidang/crm/dao/example/ExampleMapper.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375772459333" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-domain/pom.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375772459633" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-dao/pom.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375772459333" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-rpc/jpd-crm-rpc.iml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375772459633" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-service/pom.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375844233075" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-dao/src/main/java/com/jingpaidang/crm/dao/example/ExampleMapper.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375851030853" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-web/pom.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375772459334" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-web/src/main/webapp/index.jsp" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375772459334" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/pom.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375850902629" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-common/pom.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375850924371" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm.iml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375772459334" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-web/src/main/webapp/WEB-INF/template/example/example.ftl" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375772459334" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-web/src/main/webapp/WEB-INF/template/example/insert.ftl" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375772459334" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-web/src/main/webapp/WEB-INF/spring3-servlet.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375772459334" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-web/src/main/webapp/WEB-INF/web.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375772459334" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-dao/src/main/resources/mybatis.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375772459334" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-service/src/main/java/com/jingpaidang/crm/service/example/ExampleService.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375851030853" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-web/src/main/resources/jdbc.properties" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375772459633" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-web/src/main/resources/log4j.properties" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375772459633" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-web/src/main/java/com/jingpaidang/crm/controller/example/ExampleController.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375772459334" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-web/src/main/resources/spring3-applicationContext.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375842588041" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-domain/src/main/java/com/jingpaidang/crm/domain/example/Example.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375772459633" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/.idea/workspace.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375852674277" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-web/src/main/webapp/WEB-INF/template/oauth/jdOauth.ftl" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375779622147" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-rpc/src/main/java/com/jingpaidang/crm/rpc/jos/JdService.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375779996765" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-rpc/pom.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375844627376" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-web/src/main/java/com/jingpaidang/crm/controller/oauth/OauthController.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376045519380" ignored="false" />
+    <file path="/OauthController.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375783444254" ignored="false" />
+    <file path="/TokenService.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375844633385" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-rpc/src/main/java/com/jingpaidang/crm/rpc/jos/TokenService.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375844723320" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-service/src/main/java/com/jingpaidang/crm/service/example/exampleProxy/ExampleServiceProxy.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375844042104" ignored="false" />
+    <file path="/ExampleServiceProxy.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375843517042" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-rpc/src/main/java/com/jingpaidang/crm/rpc/jos/proxy/JdServiceProxy.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375844577395" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-service/src/main/java/com/jingpaidang/crm/service/merchant/MerchantService.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375844108692" ignored="false" />
+    <file path="/MerchantService.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375843775511" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-dao/src/main/java/com/jingpaidang/crm/dao/merchant/MerchantMapper.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375845251298" ignored="false" />
+    <file path="/MerchantMapper.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375844711349" ignored="false" />
+    <file path="/SkuSearchServlet.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375851499456" ignored="false" />
+    <file path="$PROJECT_DIR$/../sku/src/main/java/com/jingpaidang/toolSystem/servlet/SkuSearchServlet.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375852604816" ignored="false" />
+    <file path="$PROJECT_DIR$/../sku/src/main/webapp/index.jsp" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375954392285" ignored="false" />
+    <file path="/index.jsp" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375954378097" ignored="false" />
+    <file path="$PROJECT_DIR$/../sku/src/main/resources/keys" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375851959628" ignored="false" />
+    <file path="/keys" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375851930247" ignored="false" />
+    <file path="$PROJECT_DIR$/../sku/src/main/java/com/jingpaidang/toolSystem/servlet/SkuAddServlet.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375953931173" ignored="false" />
+    <file path="$PROJECT_DIR$/../sku/src/main/webapp/add.jsp" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375959930318" ignored="false" />
+    <file path="/add.jsp" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1375959922685" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-sku/jpd-sku-dao/src/main/resources/com/jingpaidang/sku/dao/keyword/KeywordMapper.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376042528831" ignored="false" />
+    <file path="/KeywordMapper.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376042528184" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-sku/jpd-sku-dao/src/main/java/com/jingpaidang/sku/dao/keyword/KeywordMapper.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376030345779" ignored="false" />
+    <file path="/KeywordMapper.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376030142179" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-sku/jpd-sku-dao/src/main/java/com/jingpaidang/sku/dao/sku/SkuMapper.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376041123771" ignored="false" />
+    <file path="/SkuMapper.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376041116483" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-sku/jpd-sku-dao/src/main/resources/com/jingpaidang/sku/dao/sku/SkuMapper.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376042449535" ignored="false" />
+    <file path="/SkuMapper.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376042443086" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-sku/jpd-sku-dao/src/main/resources/mybatis.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376029426432" ignored="false" />
+    <file path="/mybatis.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376029426432" ignored="false" />
+    <file path="/ConvertRuleMapper.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376030257647" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-sku/jpd-sku-domain/src/main/java/com/jingpaidang/sku/domain/sku/Sku.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376030895464" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-sku/jpd-sku-domain/src/main/java/com/jingpaidang/sku/domain/keyword/Keyword.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376032208429" ignored="false" />
+    <file path="/Keyword.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376032186830" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-sku/jpd-sku-service/src/main/java/com/jingpaidang/sku/service/sku/JDSkuService.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376032930523" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-sku/jpd-sku-service/src/main/java/com/jingpaidang/sku/service/sku/JingdongBrand.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376032545972" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-sku/jpd-sku-service/src/main/java/com/jingpaidang/sku/service/sku/JingdongSkuThread.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376032574583" ignored="false" />
+    <file path="/JDSkuService.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376032912402" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-sku/jpd-sku-common/src/main/java/com/jingpaidang/sku/common/constant/BaseConstant.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376032884146" ignored="false" />
+    <file path="/BaseConstant.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376032869346" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-sku/jpd-sku-web/src/main/java/com/jingpaidang/sku/controller/sku/SkuController.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376042764459" ignored="false" />
+    <file path="/SkuController.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376040708603" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-sku/jpd-sku-web/src/main/java/com/jingpaidang/sku/controller/user/UserController.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376040577457" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-sku/jpd-sku-domain/src/main/java/com/jingpaidang/sku/domain/account/Account.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376033740868" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-service/src/main/java/com/jingpaidang/crm/service/member/MemberService.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376045547918" ignored="false" />
+    <file path="/Unnamed.txt.ft" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376034499406" ignored="false" />
+    <file path="/Dynamic Method Body.txt.ft" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376034720957" ignored="false" />
+    <file path="/MemberService.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376034663085" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-sku/jpd-sku-web/src/main/java/com/jingpaidang/sku/controller/example/ExampleController.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376034756758" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-sku/jpd-sku-common/src/main/java/com/jingpaidang/sku/common/util/StringUtils.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376035600550" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-sku/pom.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376037175406" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-sku/jpd-sku-web/pom.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376036147570" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-sku/jpd-sku-service/pom.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376037192438" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-sku/jpd-sku-web/src/main/webapp/add.jsp" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376037994538" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-sku/jpd-sku-web/src/main/webapp/WEB-INF/template/user/login.ftl" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376038473668" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-sku/jpd-sku-web/src/main/webapp/js/login.js" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376042721842" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-sku/jpd-sku-web/src/main/webapp/js/reg.js" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376040303703" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-sku/jpd-sku-web/src/main/java/com/jingpaidang/sku/filter/LoginFilter.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376040469035" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-sku/jpd-sku-web/src/main/webapp/WEB-INF/web.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376040953644" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-sku/jpd-sku-web/src/main/java/com/jingpaidang/sku/interceptor/LoginInterceptor.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376039952809" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-sku/jpd-sku-web/src/main/resources/spring3-applicationContext.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376039969797" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-sku/jpd-sku-web/src/main/webapp/WEB-INF/template/user/register.ftl" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376040645026" ignored="false" />
+    <file path="/register.ftl" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376040616129" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-sku/jpd-sku-web/src/main/webapp/WEB-INF/template/sku/searchSku.ftl" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376045125083" ignored="false" />
+    <file path="/searchSku.ftl" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376045124775" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-service/src/main/java/com/jingpaidang/crm/service/task/impl/GetMemberTaskServiceImpl.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376045519380" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-web/src/main/java/com/jingpaidang/crm/controller/member/MemberController.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376045519380" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-web/src/main/resources/quartzJob.xml" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376045519380" ignored="false" />
+    <file path="$PROJECT_DIR$/../jpd-crm/jpd-crm-dao/src/main/java/com/jingpaidang/crm/dao/member/MemberMapper.java" changelist="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" time="1376045519380" ignored="false" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="DatabaseView">
+    <flatten value="false" />
+    <groupTables value="false" />
+    <sortChildren value="false" />
+  </component>
+  <component name="DebuggerManager">
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint url="file://$PROJECT_DIR$/cshop-rpc/src/main/java/com/jingpaidang/cshop/rpc/jd/JdService.java" line="87" class="com.jingpaidang.cshop.rpc.jd.JdService" package="com.jingpaidang.cshop.rpc.jd">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/cshop-rpc/src/main/java/com/jingpaidang/cshop/rpc/jd/JdService.java" line="296" class="com.jingpaidang.cshop.rpc.jd.JdService" package="com.jingpaidang.cshop.rpc.jd">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
+    <breakpoint_rules />
+    <ui_properties />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="cshop" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="example_list.ftl" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cshop-web/src/main/webapp/WEB-INF/template/example/example_list.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="30" column="33" selection-start="1037" selection-end="1037" vertical-scroll-proportion="-20.689655">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user_toIndex.ftl" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cshop-web/src/main/webapp/WEB-INF/template/user/user_toIndex.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user_relation.ftl" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/cshop-web/src/main/webapp/WEB-INF/template/user/user_relation.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="92" column="106" selection-start="3803" selection-end="3803" vertical-scroll-proportion="1.9691119">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$USER_HOME$/gitRepository" />
+  </component>
+  <component name="GitLogSettings">
+    <option name="myStructureFilterPaths" />
+    <option name="myDateState">
+      <MyDateState />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/cshop-web/src/main/webapp/WEB-INF/template/move/move_target_shop_list.ftl" />
+        <option value="$PROJECT_DIR$/cshop-web/src/main/webapp/js/moveTarget.js" />
+        <option value="$PROJECT_DIR$/cshop-web/src/main/java/com/jingpaidang/cshop/action/history/HistoryAction.java" />
+        <option value="$PROJECT_DIR$/cshop-web/src/main/webapp/WEB-INF/template/move/move_src_item_list.ftl" />
+        <option value="$PROJECT_DIR$/cshop-web/src/main/webapp/js/move.js" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/cshop-web/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/cshop-common/src/main/java/com/jingpaidang/cshop/common/utils/StringUtil.java" />
+        <option value="$PROJECT_DIR$/cshop-web/src/main/webapp/env.jsp" />
+        <option value="$PROJECT_DIR$/cshop-web/src/main/resources/constant.properties" />
+        <option value="$PROJECT_DIR$/cshop-service/src/main/java/com/jingpaidang/cshop/service/UserService.java" />
+        <option value="$PROJECT_DIR$/cshop-web/src/main/java/com/jingpaidang/cshop/action/user/UserAction.java" />
+        <option value="$PROJECT_DIR$/cshop-rpc/pom.xml" />
+        <option value="$PROJECT_DIR$/cshop-rpc/src/main/java/com/jingpaidang/cshop/rpc/jd/TokenService.java" />
+        <option value="$PROJECT_DIR$/cshop-rpc/src/main/java/com/jingpaidang/cshop/rpc/jd/proxy/JdServiceProxy.java" />
+        <option value="$PROJECT_DIR$/cshop-dao/src/main/resources/com/jingpaidang/cshop/dao/convert/ConvertRuleMapper.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+      </PATH>
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="24" />
+    <option name="width" value="1920" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <OptionsSetting value="true" id="Undo Check Out" />
+    <OptionsSetting value="true" id="Get Latest Version" />
+    <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cshop-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cshop-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cshop-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cshop-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cshop-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cshop-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cshop-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="move" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cshop-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="history" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cshop-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="example" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cshop-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth1" value="182" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth0" value="165" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth3" value="75" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth2" value="189" />
+    <property name="OverrideImplement.combined" value="true" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder1" value="1" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder2" value="2" />
+    <property name="recentsLimit" value="5" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth2" value="170" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder5" value="5" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth1" value="163" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder4" value="4" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth0" value="146" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth5" value="1071" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth4" value="146" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth3" value="146" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth4" value="141" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth5" value="1090" />
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder5" value="5" />
+    <property name="options.lastSelected" value="File.Encoding" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder3" value="3" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder4" value="4" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder1" value="1" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder2" value="2" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder0" value="0" />
+    <property name="restartRequiresConfirmation" value="true" />
+    <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.jingpaidang.cshop.rpc.jd" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cshop-web/src/main/webapp/WEB-INF/template/oauth" />
+      <recent name="$PROJECT_DIR$/cshop-web/src/main/webapp" />
+      <recent name="$PROJECT_DIR$/cshop-web/src/main/webapp/WEB-INF/template/common" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cshop-web/src/main/webapp/WEB-INF/template/oauth" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.tomcat">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
+    <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list />
+            </option>
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Remote" singleton="true">
+      <JSRemoteDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSRemoteDebuggerConfigurationSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
+      <deployment />
+      <server-settings />
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <method />
+    </configuration>
+    <configuration default="false" name="tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.x">
+      <deployment>
+        <artifact name="cshop-web:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_cshop_7" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Cover" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="36308" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method>
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="cshop-web:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Tomcat Server.tomcat" />
+    </list>
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="true" SSL_PROTOCOLS="all">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <configuration useDefault="false">$USER_HOME$/.subversion</configuration>
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="$PROJECT_DIR$" />
+          <option name="myCopyRoot" value="$PROJECT_DIR$" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="$PROJECT_DIR$/cshop-common" />
+          <option name="myCopyRoot" value="$PROJECT_DIR$/cshop-common" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="$PROJECT_DIR$/cshop-dao" />
+          <option name="myCopyRoot" value="$PROJECT_DIR$/cshop-dao" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="$PROJECT_DIR$/cshop-domain" />
+          <option name="myCopyRoot" value="$PROJECT_DIR$/cshop-domain" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="$PROJECT_DIR$/cshop-rpc" />
+          <option name="myCopyRoot" value="$PROJECT_DIR$/cshop-rpc" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="$PROJECT_DIR$/cshop-service" />
+          <option name="myCopyRoot" value="$PROJECT_DIR$/cshop-service" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="$PROJECT_DIR$/cshop-web" />
+          <option name="myCopyRoot" value="$PROJECT_DIR$/cshop-web" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="$PROJECT_DIR$" />
+          <option name="myCopyRoot" value="$PROJECT_DIR$" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2a7fda3c-4da4-4594-afd7-f1dd3e67d700" name="Default" comment="" />
+      <changelist id="21153852-06d7-45c5-92aa-f1505479384c" name="LoginFilter" comment="" />
+      <created>1374551741349</created>
+      <updated>1374551741349</updated>
+    </task>
+    <task id="LOCAL-00001">
+      <created>1374569409132</created>
+      <updated>1374569409132</updated>
+    </task>
+    <task id="LOCAL-00002">
+      <created>1375322320171</created>
+      <updated>1375322320171</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="24" width="1920" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43208557" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37005347" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959402" sideWeight="0.7112299" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.7112299" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30160427" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.060962565" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42352942" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18108974" sideWeight="0.6983957" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16773504" sideWeight="0.62994653" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22222222" sideWeight="0.62994653" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35625" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3614973" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_NEW_TODO" value="true" />
+    <option name="myTodoPanelSettings">
+      <value>
+        <are-packages-shown value="false" />
+        <are-modules-shown value="false" />
+        <flatten-packages value="false" />
+        <is-autoscroll-to-source value="false" />
+      </value>
+    </option>
+    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
+    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
+    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
+    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
+    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
+    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
+    <option name="SHORT_DIFF_HORIZONTALLY" value="true" />
+    <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
+    <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
+    <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
+    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
+    <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
+    <option name="LIMIT_HISTORY" value="true" />
+    <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
+    <option name="UPDATE_FILTER_SCOPE_NAME" />
+    <option name="USE_COMMIT_MESSAGE_MARGIN" value="false" />
+    <option name="COMMIT_MESSAGE_MARGIN_SIZE" value="72" />
+    <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
+    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
+    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
+    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
+    <option name="ACTIVE_VCS_NAME" />
+    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
+    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
+    <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
+    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
+    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/cshop-web/src/main/webapp/js/moveTarget.js</url>
+          <line>148</line>
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="149" column="0" selection-start="5388" selection-end="5388" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cshop-dao/src/main/java/com/jingpaidang/cshop/dao/category/ItemCategoryMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="85" column="69" selection-start="1900" selection-end="1900" vertical-scroll-proportion="-0.0074626864">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cshop-dao/src/main/java/com/jingpaidang/cshop/dao/category/CategoryPropertyMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="30" selection-start="790" selection-end="790" vertical-scroll-proportion="-15.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cshop-dao/src/main/resources/com/jingpaidang/cshop/dao/category/ItemCategoryMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="127" column="66" selection-start="3993" selection-end="3993" vertical-scroll-proportion="-0.032906763">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cshop-web/src/main/webapp/WEB-INF/template/common/common_header.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="41" selection-start="560" selection-end="560" vertical-scroll-proportion="0.4519774">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cshop-web/src/main/webapp/WEB-INF/template/common/common_footer.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cshop-web/src/main/webapp/WEB-INF/template/common/common_sidebar.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="45" selection-start="370" selection-end="370" vertical-scroll-proportion="0.30131826">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cshop-web/src/main/webapp/WEB-INF/template/convert/convert_rule_detail.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="58" selection-start="1596" selection-end="1596" vertical-scroll-proportion="0.62335217">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cshop-web/src/main/webapp/WEB-INF/template/convert/convert_rule_add.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="87" column="70" selection-start="3980" selection-end="3980" vertical-scroll-proportion="0.57915056">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cshop-web/src/main/webapp/WEB-INF/template/move/common/move_item_page_bar.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="48" selection-start="316" selection-end="316" vertical-scroll-proportion="-6.8965516">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cshop-web/src/main/webapp/WEB-INF/template/move/common/move_src_item_table.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="42" selection-start="360" selection-end="360" vertical-scroll-proportion="0.30131826">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cshop-web/src/main/webapp/WEB-INF/template/user/user_login.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="62" selection-start="2345" selection-end="2345" vertical-scroll-proportion="1.2429378">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cshop-web/src/main/webapp/WEB-INF/template/user/user_reg.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-3.7065637">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cshop-web/src/main/webapp/WEB-INF/template/example/example_list.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="33" selection-start="1037" selection-end="1037" vertical-scroll-proportion="-20.689655">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cshop-web/src/main/webapp/WEB-INF/template/user/user_toIndex.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cshop-web/src/main/webapp/WEB-INF/template/user/user_relation.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="92" column="106" selection-start="3803" selection-end="3803" vertical-scroll-proportion="1.9691119">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>cshop-web:war</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Web</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>cshop</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: aopalliance:aopalliance:1.0</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
+

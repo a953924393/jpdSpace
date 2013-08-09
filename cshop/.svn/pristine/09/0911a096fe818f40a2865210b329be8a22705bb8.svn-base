@@ -1,0 +1,9 @@
+<%@ page import="com.jingpaidang.cshop.common.constant.BasicConstant" %>
+<%
+	String jdappkey = "F1A21BD0EC7DD30C5A8497B7BE953F1C";
+	String jdappsecret = "";
+	String jdredirectUrlPrefix = "http://cshop.jingpaidang.com:8080";
+	String tbappkey = "21571014";
+	String tbappsecret = "c272d4dd93d72e168e3c7f75da832160";
+	String tbredirectUrlPrefix = "http://cshop.jingpaidang.com:8080";
+%>

@@ -1,0 +1,256 @@
+package com.jingpaidang.toolSystem.service;
+
+import com.jingpaidang.toolSystem.dao.KeywordDao;
+import com.jingpaidang.toolSystem.dao.SkuDao;
+import com.jingpaidang.toolSystem.domain.Keyword;
+import com.jingpaidang.toolSystem.domain.Sku;
+import org.jsoup.Connection;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.net.URLEncoder;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * Created with IntelliJ IDEA.
+ * User: jackchen
+ * Date: 7/8/13
+ * Time: 8:27 AM
+ * To change this template use File | Settings | File Templates.
+ */
+
+
+public class JingdongSku {
+
+    private static final Logger logger = LoggerFactory.getLogger(JingdongSku.class);
+
+    private SkuDao skuDao = new SkuDao();
+    private KeywordDao keywordDao = new KeywordDao();
+
+    public JingdongSku() {
+
+    }
+
+    public void addSkus(String queryKey) throws Exception {
+        queryKey = queryKey.trim();
+
+        Keyword keywordByName = this.findKeywordByName(queryKey);
+
+        for (int i = 1; i < 51; i++) {
+
+            logger.info("关键词" + keywordByName.getKeyName() + "======正在保存第" + i + "页" );
+
+            List<String> skus = this.getConn(queryKey, i);
+
+
+            List<Sku> skuList = this.sku2Obj(skus, i, keywordByName.getId());
+
+            skuDao.addSkuList(skuList);
+            if(skus.size() < 36)
+                break;
+        }
+    }
+
+    private Keyword findKeywordByName(String queryKey) {
+        Keyword keywordByName = keywordDao.findKeywordByName(queryKey);
+
+        if(keywordByName != null) {
+            return keywordByName;
+        }
+        Keyword keyword = new Keyword();
+        keyword.setKeyName(queryKey);
+
+
+        keywordDao.addKeyword(keyword);
+        keywordByName = keywordDao.findKeywordByName(queryKey);
+
+        return keywordByName;
+    }
+
+    /**
+     * 将sku转变为对象便于保存
+     * @param skuNums
+     * @param pageNum
+     * @param keyId
+     * @return
+     */
+    private List<Sku> sku2Obj(List<String> skuNums, int pageNum, int keyId) {
+        List<Sku> skuList = new ArrayList<Sku>();
+
+        Sku sku = null;
+
+        int i = 1;
+
+        for(String skuNum: skuNums) {
+
+            sku = new Sku();
+
+            sku.setSkuNum(skuNum);
+
+            sku.setKeyId(keyId);
+
+            sku.setLocation(i + (pageNum - 1) * 36 );
+
+            skuList.add(sku);
+
+            i ++;
+        }
+
+        return skuList;
+    }
+
+    /**
+     * 获得链接返回sku集合
+     *
+     * @param queryKey
+     * @param pageNum
+     * @return
+     * @throws Exception
+     */
+    public List<String> getConn(String queryKey, int pageNum) throws Exception {
+        logger.info("转码前=======" + queryKey);
+        String encode = URLEncoder.encode(queryKey, "utf-8");
+
+        logger.info("转码后=======" + encode);
+
+        String address = "http://search.jd.com/Search?keyword=" + encode + "&enc=utf-8&area=1&qr=&qrst=UNEXPAND&et=&rt=1&sttr=" + "&area=1&click=&psort=&page=" + pageNum;
+
+        List<String> stringList = new ArrayList<String>();
+        Document doc = Jsoup.connect(address)
+                .data("query", "Java")
+                .userAgent("Mozilla")
+                .timeout(1000000)
+                .post();
+
+
+        Elements skus = doc.select("li[sku]");
+
+        for (Element element : skus) {
+            String sku1 = element.attr("sku");
+            stringList.add(sku1);
+        }
+
+        return stringList;
+    }
+
+    public int isEqual(String querySku, List<String> skus) {
+
+        int count = 1;
+        for (String sku : skus) {
+            if (!querySku.equals(sku)) {
+                count++;
+            } else {
+                break;
+            }
+        }
+
+        return count;
+    }
+
+    /**
+     * 查询sku的位置
+     * @param queryKey
+     * @param sku
+     * @return
+     * @throws Exception
+     */
+    public Map<String, Integer> getSkuLocation(String queryKey, String sku) throws Exception {
+        Sku skuBySkuNumAndKey = skuDao.findSkuBySkuNumAndKey(queryKey, sku);
+
+        if(skuBySkuNumAndKey == null) {
+            return null;
+        }
+
+        int location = skuBySkuNumAndKey.getLocation();
+
+        Map<String, Integer> map = new HashMap<String, Integer>();
+
+        map.put("pageNum", location/36 + 1);
+        int count = location%36;
+
+        map.put("tr", count / 4 + 1);
+        map.put("td", count % 4 == 0 ? 4 : count % 4);
+
+        return map;
+    }
+
+    /**
+     * 使用字符串解析，
+     *
+     * @param queryKey
+     * @param sku
+     * @return
+     * @throws Exception
+     */
+    @Deprecated
+    public Map<String, Integer> getSkuAddress(String queryKey, String sku) throws Exception {
+        JingdongSku jingdongSku = new JingdongSku();
+        logger.info("开始查找=========================》");
+        int pageNum;
+        int count = 0;
+
+        for (pageNum = 1; pageNum < 1000; pageNum++) {
+            logger.info("===>正在查找第" + pageNum + "页");
+
+            List<String> conn = jingdongSku.getConn(queryKey, pageNum);
+            count = jingdongSku.isEqual(sku, conn);
+
+            if (count <= 36) {
+                break;
+            }
+        }
+        logger.info("已经查找到=====================》");
+
+        Map<String, Integer> map = new HashMap<String, Integer>();
+
+        map.put("pageNum", pageNum);
+        map.put("tr", count / 4 + 1);
+        map.put("td", count % 4 == 0 ? 4 : count % 4);
+        return map;
+    }
+
+    public Map<String, String> getSkuAddress(String queryKey, String sku, int begin, int end) throws Exception {
+        JingdongSku jingdongSku = new JingdongSku();
+        logger.info("开始查找=======关键词=====" + queryKey + "========sku" + sku);
+
+        int pageNum;
+        int count = 0;
+
+        if (end > 1000) {
+            end = 1000;
+        }
+
+
+        for (pageNum = begin; pageNum <= end; pageNum++) {
+            logger.info("===>正在查找第" + pageNum + "页");
+
+            if (pageNum == 101) {
+                break;
+            }
+            List<String> conn = jingdongSku.getConn(queryKey, pageNum);
+            count = jingdongSku.isEqual(sku, conn);
+
+            if (count <= 36) {
+                logger.info("已经查找到===============" + queryKey);
+
+                break;
+            }
+        }
+
+
+        Map<String, String> map = new HashMap<String, String>();
+
+        map.put("pageNum", pageNum + "");
+        map.put("tr", count / 4 + 1 + "");
+        map.put("td", (count % 4 == 0 ? 4 : count % 4) + "");
+        return map;
+    }
+
+}

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2011-2012 the original author or authors.
+  ~
+  ~  http://www.jingpaidang.com
+  -->
+ 
+ <!DOCTYPE mapper
+        PUBLIC "-//ibatis.apache.org//DTD Config 3.1//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jingpaidang.cshop.dao.wares.WaresMapper">
+	<!-- 根据商品ID和账户ID查询商品 -->
+	<insert id="insert" parameterType="Wares">
+		INSERT INTO jshop_account_wares
+		(
+		item_id,
+		item_name,
+		category_name,
+		moved,
+		storage,
+		img,
+		url,
+		price,
+		category_id,
+		jshop_account_id,
+		jshop_user_id,
+		description,
+		cost_price,
+		market_price,
+		created,
+		modified,
+		outer_id,
+		status
+		)
+		VALUES
+		(
+		#{itemId},
+		#{itemName},
+		#{categoryName},
+		#{moved},
+		#{storage},
+		#{img},
+		#{url},
+		#{price},
+		#{categoryId},
+		#{jshopAccountId},
+		#{jshopUserId},
+		#{description},
+		#{costPrice},
+		#{marketPrice},
+		#{created},
+		#{modified},
+		#{outerId},
+		#{status}
+		);
+	</insert>
+	<select id="getWareItemByItemIdAndAccountId" resultType="Wares" parameterType="java.util.Map">
+		SELECT item_id AS itemId FROM jshop_account_wares WHERE item_id = #{itemId} and jshop_account_id = #{accountId};
+	</select>
+	<select id="getWareItemList" parameterType="java.util.Map" resultType="Wares">
+		SELECT 
+			id AS id,
+			item_id AS itemId,
+			item_name AS itemName,
+			category_name AS categoryName,
+			storage AS storage,
+			img AS img,
+			price AS price,
+			category_id AS categoryId,
+			moved AS moved
+		FROM
+			jshop_account_wares
+		WHERE
+			1=1 
+			<if test="cid!=null and cid!=''">
+				AND category_id = #{cid} 
+			</if>
+			<if test="queryKey!=null and queryKey!=''">
+				AND item_name like CONCAT('%',#{queryKey},'%') 
+			</if>
+			<if test="itemIds!=null and itemIds!=''">
+				AND item_id IN
+				<foreach collection="itemIds" item= "item" open="(" separator="," close=")">
+					#{item}
+				</foreach>
+			</if>
+			<if test="moved!=null and moved!=''">
+				AND moved=#{moved}
+			</if>
+			<if test="sale!=null and sale!=''">
+				AND status=#{sale} 
+			</if>
+		ORDER BY
+			id desc ;
+	</select>
+</mapper>

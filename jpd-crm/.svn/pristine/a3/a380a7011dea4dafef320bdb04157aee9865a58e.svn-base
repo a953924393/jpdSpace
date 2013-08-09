@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties>
+        <property name="dialect" value="mysql"/>
+    </properties>
+    <settings>
+        <setting name="lazyLoadingEnabled" value="false"/>
+    </settings>
+    <typeAliases>
+        <typeAlias type="com.jingpaidang.crm.domain.example.Example" alias="Example"/>
+        <typeAlias type="com.jingpaidang.crm.domain.member.Member" alias="Member"/>
+        <typeAlias type="com.jingpaidang.crm.domain.merchant.Merchant" alias="Merchant"/>
+        <typeAlias type="com.jingpaidang.crm.domain.order.MerchantOrder" alias="MerchantOrder"/>
+        <typeAlias type="com.jingpaidang.crm.domain.user.User" alias="User"/>
+    </typeAliases>
+</configuration>

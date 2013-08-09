@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties>
+        <property name="dialect" value="mysql"/>
+    </properties>
+    <settings>
+        <setting name="lazyLoadingEnabled" value="false"/>
+    </settings>
+    <typeAliases>
+        <typeAlias type="com.jingpaidang.sku.domain.example.Example" alias="Example"/>
+        <typeAlias type="com.jingpaidang.sku.domain.keyword.Keyword" alias="Keyword"/>
+        <typeAlias type="com.jingpaidang.sku.domain.sku.Sku" alias="Sku"/>
+         </typeAliases>
+</configuration>

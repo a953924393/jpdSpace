@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2011-2012 the original author or authors.
+  ~
+  ~  http://www.jingpaidang.com
+  -->
+
+<!DOCTYPE mapper
+        PUBLIC "-//ibatis.apache.org//DTD Config 3.1//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jingpaidang.crm.dao.merchantmember.MerchantMemberMapper">
+    <!-- 向crm_merchant_member表中添加商家与会员的关联 -->
+    <insert id="insert" parameterType="MerchantMember">
+          INSERT INTO crm_merchant_member
+          (
+          merchant_id,
+          member_id,
+          created
+          )
+          VALUES
+          (
+          #{merchantId},
+          #{memberId},
+          #{created}
+          )
+    </insert>
+</mapper>

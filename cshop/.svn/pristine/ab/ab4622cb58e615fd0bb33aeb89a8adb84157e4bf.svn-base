@@ -1,0 +1,28 @@
+<!--
+  ~ Copyright 2011-2012 the original author or authors.
+  ~
+  ~  http://www.jingpaidang.com
+  -->
+
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties>
+        <property name="dialect" value="mysql"/>
+    </properties>
+    <settings>
+        <setting name="lazyLoadingEnabled" value="false"/>
+    </settings>
+    <typeAliases>
+        <typeAlias type="com.jingpaidang.cshop.domain.example.Example" alias="Example"/>
+        <typeAlias type="com.jingpaidang.cshop.domain.user.User" alias="User"/>
+        <typeAlias type="com.jingpaidang.cshop.domain.user.Account" alias="Account"/>
+        <typeAlias type="com.jingpaidang.cshop.domain.category.ItemCategory" alias="ItemCategory"/>
+        <typeAlias type="com.jingpaidang.cshop.domain.category.AccountCategory" alias="AccountCategory"/>
+        <typeAlias type="com.jingpaidang.cshop.domain.category.CategoryProperty" alias="CategoryProperty"/>
+        <typeAlias type="com.jingpaidang.cshop.domain.category.CategoryPropertyValue" alias="CategoryPropertyValue"/>
+        <typeAlias type="com.jingpaidang.cshop.domain.convert.PlatformConvertRule" alias="PlatformConvertRule"/>
+        <typeAlias type="com.jingpaidang.cshop.domain.convert.ConvertRuleDetail" alias="ConvertRuleDetail"/>
+        <typeAlias type="com.jingpaidang.cshop.domain.ware.WareItem" alias="Wares"/>
+        <typeAlias type="com.jingpaidang.cshop.domain.move.MoveHistory" alias="MoveHistory"/>
+    </typeAliases>
+</configuration>

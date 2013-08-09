@@ -1,0 +1,30 @@
+package com.jingpaidang.toolSystem.service;
+
+/**
+ * Created with IntelliJ IDEA.
+ * User: JackChan
+ * Date: 7/17/13
+ * Time: 10:43 AM
+ */
+public class JingdongSkuThread implements Runnable{
+
+    private String queryKey;
+
+    public JingdongSkuThread(String queryKey) {
+        this.queryKey = queryKey;
+    }
+
+    public JingdongSkuThread(){};
+
+    @Override
+    public synchronized void run() {
+            JingdongSku jingdongSku = new JingdongSku();
+            System.err.println("开始任务");
+            try {
+                jingdongSku.addSkus(queryKey);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+    }
+}

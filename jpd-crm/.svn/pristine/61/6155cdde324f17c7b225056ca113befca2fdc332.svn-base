@@ -1,0 +1,17 @@
+package com.jingpaidang.crm.service.merchant;
+
+import com.jingpaidang.crm.dao.merchant.MerchantMapper;
+import com.jingpaidang.crm.domain.merchant.Merchant;
+
+public class MerchantService {
+		
+		private MerchantMapper merchantMapper;
+		
+		public void insertMerchant(Merchant merchant)
+		{
+			//undo 判断是否已经存在
+			merchantMapper.insertMerchant(merchant);
+		}
+		
+		
+}

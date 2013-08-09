@@ -1,0 +1,267 @@
+package com.jingpaidang.crm.domain.merchant;
+
+import java.util.Date;
+
+/**
+ * Created with IntelliJ IDEA.
+ * User: Tom
+ * Date: 8/8/13
+ * Time: 10:27 AM
+ */
+public class Merchant {
+
+	/**
+	 * 编号
+	 */
+	private long id;
+	/**
+	 * 商家编号
+	 */
+	private long merchantNum;
+	/**
+	 * 登陆名称
+	 */
+	private String loginName;
+	/**
+	 * 店铺名称
+	 */
+	private String shopName;
+	/**
+	 * 联系人姓名
+	 */
+	private String contact;
+	/**
+	 * 联系人手机
+	 */
+	private String telephone;
+	/**
+	 * 电子邮箱
+	 */
+	private String email;
+	/**
+	 * 公司名称
+	 */
+	private String companyName;
+	/**
+	 * 营业执照编号
+	 */
+	private String businessLicense;
+	/**
+	 * 营业执照所在地
+	 */
+	private String businessLicenseAddress;
+	/**
+	 * 公司地址
+	 */
+	private String companyAddress;
+	/**
+	 * 公司联系电话区号
+	 */
+	private String phoneDistrictNumber;
+	/**
+	 * 公司法人
+	 */
+	private String legalPerson;
+	/**
+	 * 企业类型
+	 */
+	private String businessType;
+	/**
+	 * 经营范围
+	 */
+	private String businessScope;
+	/**
+	 * 信息添加时间
+	 */
+	private Date created;
+	/**
+	 * 信息修改时间
+	 */
+	private Date modified;
+	/**
+	 * 操作人
+	 */
+	private String operator;
+	/**
+	 * 备注
+	 */
+	private String remark;
+	/**
+	 * 状态
+	 */
+	private String status;
+	/**
+	 * 商家访问token
+	 */
+	private String merchantAccessToken ;
+	/**
+	 * 商家刷新token
+	 */
+	private String merchantRefreshToken ;
+	/**
+	 * 商家访问token过期时间
+	 */
+	private String accessTokenExpireTime ;
+	/**
+	 * 商家刷新token过期时间
+	 */
+	private String refreshTokenExpireTime ;
+	/**
+	 * 商家类型
+	 */
+	private String merchantType ;
+	
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
+	public long getMerchantNum() {
+		return merchantNum;
+	}
+	public void setMerchantNum(long merchantNum) {
+		this.merchantNum = merchantNum;
+	}
+	public String getLoginName() {
+		return loginName;
+	}
+	public void setLoginName(String loginName) {
+		this.loginName = loginName;
+	}
+	public String getShopName() {
+		return shopName;
+	}
+	public void setShopName(String shopName) {
+		this.shopName = shopName;
+	}
+	public String getContact() {
+		return contact;
+	}
+	public void setContact(String contact) {
+		this.contact = contact;
+	}
+	public String getTelephone() {
+		return telephone;
+	}
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getCompanyName() {
+		return companyName;
+	}
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
+	}
+	public String getBusinessLicense() {
+		return businessLicense;
+	}
+	public void setBusinessLicense(String businessLicense) {
+		this.businessLicense = businessLicense;
+	}
+	public String getBusinessLicenseAddress() {
+		return businessLicenseAddress;
+	}
+	public void setBusinessLicenseAddress(String businessLicenseAddress) {
+		this.businessLicenseAddress = businessLicenseAddress;
+	}
+	public String getCompanyAddress() {
+		return companyAddress;
+	}
+	public void setCompanyAddress(String companyAddress) {
+		this.companyAddress = companyAddress;
+	}
+	public String getPhoneDistrictNumber() {
+		return phoneDistrictNumber;
+	}
+	public void setPhoneDistrictNumber(String phoneDistrictNumber) {
+		this.phoneDistrictNumber = phoneDistrictNumber;
+	}
+	public String getLegalPerson() {
+		return legalPerson;
+	}
+	public void setLegalPerson(String legalPerson) {
+		this.legalPerson = legalPerson;
+	}
+	public String getBusinessType() {
+		return businessType;
+	}
+	public void setBusinessType(String businessType) {
+		this.businessType = businessType;
+	}
+	public String getBusinessScope() {
+		return businessScope;
+	}
+	public void setBusinessScope(String businessScope) {
+		this.businessScope = businessScope;
+	}
+	public Date getCreated() {
+		return created;
+	}
+	public void setCreated(Date created) {
+		this.created = created;
+	}
+	public Date getModified() {
+		return modified;
+	}
+	public void setModified(Date modified) {
+		this.modified = modified;
+	}
+	public String getOperator() {
+		return operator;
+	}
+	public void setOperator(String operator) {
+		this.operator = operator;
+	}
+	public String getRemark() {
+		return remark;
+	}
+	public void setRemark(String remark) {
+		this.remark = remark;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public String getMerchantAccessToken() {
+		return merchantAccessToken;
+	}
+	public void setMerchantAccessToken(String merchantAccessToken) {
+		this.merchantAccessToken = merchantAccessToken;
+	}
+	public String getMerchantRefreshToken() {
+		return merchantRefreshToken;
+	}
+	public void setMerchantRefreshToken(String merchantRefreshToken) {
+		this.merchantRefreshToken = merchantRefreshToken;
+	}
+	public String getAccessTokenExpireTime() {
+		return accessTokenExpireTime;
+	}
+	public void setAccessTokenExpireTime(String accessTokenExpireTime) {
+		this.accessTokenExpireTime = accessTokenExpireTime;
+	}
+	public String getRefreshTokenExpireTime() {
+		return refreshTokenExpireTime;
+	}
+	public void setRefreshTokenExpireTime(String refreshTokenExpireTime) {
+		this.refreshTokenExpireTime = refreshTokenExpireTime;
+	}
+	public String getMerchantType() {
+		return merchantType;
+	}
+	public void setMerchantType(String merchantType) {
+		this.merchantType = merchantType;
+	}
+	
+	
+	
+}

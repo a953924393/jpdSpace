@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//ibatis.apache.org//DTD Config 3.1//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jingpaidang.cshop.dao.move.MoveHistoryMapper">
+	<insert id="insert" parameterType="MoveHistory" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO jshop_move_history 
+		(
+			item_id,
+			item_name,
+			img,
+			url,
+			price,
+			category_name,
+			category_id,
+			jshop_account_id,
+			jshop_user_id,
+			description,
+			created,
+			modified,
+			target_account_id,
+			target_shop_name,
+			status,
+			status_reason,
+			rule_id,
+			shop_category_id
+		)
+		VALUES
+		(
+			#{itemId},
+			#{itemName},
+			#{img},
+			#{url},
+			#{price},
+			#{categoryName},
+			#{categoryId},
+			#{jshopAccountId},
+			#{jshopUserId},
+			#{description},
+			#{created},
+			#{modified},
+			#{targetAccountId},
+			#{targetShopName},
+			#{status},
+			#{statusReason},
+			#{ruleId},
+			#{shopCategoryId}
+		);
+	</insert>
+	<select id="getMoveHistoryList" parameterType="java.util.Map" resultType="MoveHistory">
+		SELECT 
+			id AS id,
+			item_id AS itemId,
+			item_name AS itemName,
+			price AS price,
+			img AS img,
+			target_shop_name AS targetShopName,
+			status AS status,
+			status_reason AS statusReason,
+			created AS created
+		FROM
+			jshop_move_history
+		WHERE
+			1=1 
+			AND 
+				jshop_user_id = #{userId} 
+			<if test="itemId!=null and itemId!=''">
+			AND item_id=#{itemId} 
+			</if>
+			<if test="itemName!=null and itemName!=''">
+			AND item_name like CONCAT('%',#{itemName},'%')  
+			</if>
+			<if test="status!=null and status!='' and status!='null'">
+			AND status=#{status} 
+			</if>
+			<if test="accountId!=null and accountId!=''">
+			AND jshop_account_id=#{accountId} 
+			</if>
+		ORDER BY
+			id DESC;
+	</select>
+	<select id="getMoveHistoryListByIds" parameterType="java.util.Map" resultType="MoveHistory">
+		SELECT 
+			id AS id,
+			item_id AS itemId,
+			jshop_account_id AS jshopAccountId,
+			target_account_id AS targetAccountId,
+			rule_id AS ruleId,
+			shop_category_id AS shopCategoryId
+		FROM 
+			jshop_move_history
+		WHERE 
+			1=1 
+		AND id IN 
+			<foreach collection="ids" item= "ids" open="(" separator="," close=")">
+				#{ids}
+			</foreach>
+	</select>
+	<update id="updateStatusAndReasonById" parameterType="java.util.Map">
+		UPDATE jshop_move_history 
+		SET
+			status = #{status},
+			status_reason = #{statusReason},
+			modified = #{modified}
+		WHERE 
+			id=#{id}
+	</update>
+	<delete id="deleteHistory" parameterType="java.util.Map">
+		DELETE 
+		FROM 
+		jshop_move_history 
+		WHERE 
+		jshop_user_id = #{userId} 
+		AND id IN 
+			<foreach collection="ids" item= "ids" open="(" separator="," close=")">
+				#{ids}
+			</foreach>
+	</delete>
+</mapper>

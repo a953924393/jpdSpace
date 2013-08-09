@@ -1,0 +1,20 @@
+package com.jingpaidang.crm.service.merchantmenber;
+
+import com.jingpaidang.crm.domain.merchantmember.MerchantMember;
+
+/**
+ * Created with IntelliJ IDEA.
+ * User: Robert
+ * Date: 13-8-8
+ * Time: 上午11:33
+ * To change this template use File | Settings | File Templates.
+ */
+public interface MerchantMemberService {
+    /**
+     * 通过会员的id
+     * 保存会员与商家的关联
+     *  @param merchantMember
+     *  @author Robert
+     */
+    public void saveMerchantMember(MerchantMember merchantMember);
+}

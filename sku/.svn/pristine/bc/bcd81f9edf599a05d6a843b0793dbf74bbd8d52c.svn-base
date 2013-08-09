@@ -1,0 +1,123 @@
+package com.jingpaidang.toolSystem.service;
+
+import com.jingpaidang.toolSystem.dao.KeywordDao;
+import com.jingpaidang.toolSystem.dao.SkuDao;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.TimerTask;
+
+/**
+ * Created with IntelliJ IDEA.
+ * User: JackChan
+ * Date: 7/17/13
+ * Time: 9:31 AM
+ */
+public class SaveSkuTask extends TimerTask {
+    private static final Logger logger = LoggerFactory.getLogger(SaveSkuTask.class);
+
+    @Override
+    public void run() {
+        try {
+            SkuDao skuDao = new SkuDao();
+            skuDao.deleteAllSku();
+            KeywordDao keywordDao = new KeywordDao();
+            keywordDao.deleteAllKeyword();
+
+            new Thread(new JingdongSkuThread("内裤")).start();
+            new Thread(new JingdongSkuThread("休闲裤")).start();
+            new Thread(new JingdongSkuThread("吊坠")).start();
+            new Thread(new JingdongSkuThread("休闲裤 女")).start();
+            new Thread(new JingdongSkuThread("香水女士")).start();
+            new Thread(new JingdongSkuThread("沐浴露男士")).start();
+            new Thread(new JingdongSkuThread("爽肤水")).start();
+            new Thread(new JingdongSkuThread("水果")).start();
+            new Thread(new JingdongSkuThread("早教机")).start();
+            new Thread(new JingdongSkuThread("玩具")).start();
+            new Thread(new JingdongSkuThread("电动童车")).start();
+            new Thread(new JingdongSkuThread("跑步机")).start();
+            new Thread(new JingdongSkuThread("餐桌")).start();
+            new Thread(new JingdongSkuThread("沙发")).start();
+            new Thread(new JingdongSkuThread("记忆枕")).start();
+            new Thread(new JingdongSkuThread("四件套")).start();
+            new Thread(new JingdongSkuThread("避孕套")).start();
+            new Thread(new JingdongSkuThread("安全套")).start();
+            new Thread(new JingdongSkuThread("香炉")).start();
+            new Thread(new JingdongSkuThread("摆件")).start();
+            new Thread(new JingdongSkuThread("工艺品")).start();
+            new Thread(new JingdongSkuThread("台球杆")).start();
+            new Thread(new JingdongSkuThread("台球")).start();
+            new Thread(new JingdongSkuThread("球杆")).start();
+            new Thread(new JingdongSkuThread("竹炭乳胶床垫")).start();
+            new Thread(new JingdongSkuThread("弹力袜")).start();
+            new Thread(new JingdongSkuThread("静脉曲张")).start();
+            new Thread(new JingdongSkuThread("静脉曲张袜")).start();
+            new Thread(new JingdongSkuThread("美腿袜")).start();
+            new Thread(new JingdongSkuThread("麻将凉席")).start();
+            new Thread(new JingdongSkuThread("凉席")).start();
+            new Thread(new JingdongSkuThread("竹席")).start();
+            new Thread(new JingdongSkuThread("阿迪达斯 沐浴露 男")).start();
+            new Thread(new JingdongSkuThread("保湿补水")).start();
+            new Thread(new JingdongSkuThread("保湿面膜")).start();
+            new Thread(new JingdongSkuThread("冰膜")).start();
+            new Thread(new JingdongSkuThread("玻尿酸")).start();
+            new Thread(new JingdongSkuThread("补水保湿面膜")).start();
+            new Thread(new JingdongSkuThread("补水面膜")).start();
+            new Thread(new JingdongSkuThread("蚕丝面膜")).start();
+            new Thread(new JingdongSkuThread("淡斑精华")).start();
+            new Thread(new JingdongSkuThread("儿童牙膏")).start();
+            new Thread(new JingdongSkuThread("儿童牙刷")).start();
+            new Thread(new JingdongSkuThread("防晒隔离霜")).start();
+            new Thread(new JingdongSkuThread("海藻面膜")).start();
+            new Thread(new JingdongSkuThread("海藻泥")).start();
+            new Thread(new JingdongSkuThread("洁面膏")).start();
+            new Thread(new JingdongSkuThread("紧致眼霜")).start();
+            new Thread(new JingdongSkuThread("进口面膜")).start();
+            new Thread(new JingdongSkuThread("玫瑰精华")).start();
+            new Thread(new JingdongSkuThread("美白")).start();
+            new Thread(new JingdongSkuThread("美白保湿套装")).start();
+            new Thread(new JingdongSkuThread("美白淡斑")).start();
+            new Thread(new JingdongSkuThread("美白面膜")).start();
+            new Thread(new JingdongSkuThread("美白乳")).start();
+            new Thread(new JingdongSkuThread("面膜")).start();
+            new Thread(new JingdongSkuThread("面膜美白补水")).start();
+            new Thread(new JingdongSkuThread("沐浴露男士")).start();
+            new Thread(new JingdongSkuThread("男士沐浴露")).start();
+            new Thread(new JingdongSkuThread("喷雾")).start();
+            new Thread(new JingdongSkuThread("祛痘洁面乳")).start();
+            new Thread(new JingdongSkuThread("去角质死皮")).start();
+            new Thread(new JingdongSkuThread("全身美白")).start();
+            new Thread(new JingdongSkuThread("软毛牙刷")).start();
+            new Thread(new JingdongSkuThread("身体乳")).start();
+            new Thread(new JingdongSkuThread("爽肤水")).start();
+            new Thread(new JingdongSkuThread("洗面奶")).start();
+            new Thread(new JingdongSkuThread("香水女士")).start();
+            new Thread(new JingdongSkuThread("修复面膜")).start();
+            new Thread(new JingdongSkuThread("牙膏")).start();
+            new Thread(new JingdongSkuThread("牙膏套装")).start();
+            new Thread(new JingdongSkuThread("牙刷")).start();
+            new Thread(new JingdongSkuThread("牙线")).start();
+            new Thread(new JingdongSkuThread("眼胶")).start();
+            new Thread(new JingdongSkuThread("眼霜")).start();
+            new Thread(new JingdongSkuThread("一洗白")).start();
+            new Thread(new JingdongSkuThread("足部去角质")).start();
+            new Thread(new JingdongSkuThread("足部去角质死皮")).start();
+            new Thread(new JingdongSkuThread("项链")).start();
+            new Thread(new JingdongSkuThread("戒指")).start();
+            new Thread(new JingdongSkuThread("手镯")).start();
+            new Thread(new JingdongSkuThread("衬衫")).start();
+            new Thread(new JingdongSkuThread("T恤")).start();
+            new Thread(new JingdongSkuThread("耳环")).start();
+            new Thread(new JingdongSkuThread("玉")).start();
+            new Thread(new JingdongSkuThread("和田玉")).start();
+
+        } catch (Exception e) {
+            logger.info("添加内衣关键词失败");
+            e.printStackTrace();
+        }
+
+    }
+}
+
+
+

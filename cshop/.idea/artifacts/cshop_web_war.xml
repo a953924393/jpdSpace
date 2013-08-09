@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="cshop-web:war">
+    <output-path>$PROJECT_DIR$/cshop-web/target</output-path>
+    <root id="archive" name="cshop-web.war">
+      <element id="artifact" artifact-name="cshop-web:war exploded" />
+    </root>
+  </artifact>
+</component>

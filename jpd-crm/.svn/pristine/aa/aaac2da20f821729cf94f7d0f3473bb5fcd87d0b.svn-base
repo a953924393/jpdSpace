@@ -1,0 +1,49 @@
+package com.jingpaidang.crm.dao.member;
+
+import java.util.List;
+
+import com.jingpaidang.crm.domain.member.Member;
+
+/**
+ * Created with IntelliJ IDEA.
+ * User: Robert
+ * Date: 13-8-7
+ * Time: 上午9:08
+ * To change this template use File | Settings | File Templates.
+ */
+public interface MemberMapper {
+    /**
+     *
+     * @Title:insert
+     * @Description:TODO(添加会员)
+     * @param:@param member
+     * @return:void
+     * @throws
+     * @Create: 2013-8-7 上午9:10:11
+     * @Author : Robert
+     */
+    public int insert(Member member);
+    /**
+     * 
+     * @Title:getMemberByMemberJdId 
+     * @Description:TODO(根据会员京东ID查询会员) 
+     * @param:@param jdId
+     * @param:@return 
+     * @return:List<Member> 
+     * @throws 
+     * @Create: 2013-8-8 下午2:49:39
+     * @Author : Alex
+     */
+    public List<Member> getMemberByMemberJdId(String jdId);
+    /**
+     * 
+     * @Title:updateLastConsumTime 
+     * @Description:TODO(修改最后一次消费时间) 
+     * @param:@param member 
+     * @return:void 
+     * @throws 
+     * @Create: 2013-8-8 下午3:25:07
+     * @Author : Alex
+     */
+    public void updateLastConsumTime(Member member);
+}

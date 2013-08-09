@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//ibatis.apache.org//DTD Config 3.1//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jingpaidang.crm.dao.example.ExampleMapper">
+    <select id="selectAll" resultType="Example">
+        SELECT
+          id AS id,
+          name AS name,
+          married AS married,
+          createTime AS createTime
+        FROM examples
+    </select>
+
+    <insert id="insert" parameterType="Example">
+        INSERT INTO examples
+        (
+          name,
+          married,
+          createTime
+        )
+        VALUES
+        (
+          #{name},
+          #{married},
+          #{createTime}
+        )
+
+
+    </insert>
+</mapper>
